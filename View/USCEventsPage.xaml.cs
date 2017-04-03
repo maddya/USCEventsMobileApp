@@ -2,7 +2,7 @@
 
 namespace USCEvents
 {
-	public partial class USCEventsPage : ContentPage
+	public partial class USCEventsPage : TabbedPage
 	{
 		public USCEventsPage()
 		{

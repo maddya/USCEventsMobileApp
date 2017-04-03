@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+	<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:USCEvents"
+            x:Class="USCEvents.USCEventsPage">
+    
+    <NavigationPage Title="Events" Icon="eventsDisabled.png">
+        <x:Arguments>
+            <local:EventsPage />
+        </x:Arguments>
+    </NavigationPage>
+	<NavigationPage Title="Feed">
+        <x:Arguments>
+            <local:FeedPage />
+        </x:Arguments>
+    </NavigationPage>
+	<NavigationPage Title="Rewards">
+        <x:Arguments>
+            <local:RewardsPage />
+        </x:Arguments>
+    </NavigationPage>
+	<NavigationPage Title="More">
+        <x:Arguments>
+            <local:MorePage />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>
