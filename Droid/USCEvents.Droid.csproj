@@ -113,6 +113,10 @@
     <AndroidResource Include="Resources\drawable\eventsDisabled.png" />
     <AndroidResource Include="Resources\drawable\forward.png" />
     <AndroidResource Include="Resources\drawable\notifications.png" />
+    <AndroidResource Include="Resources\drawable\feedsDisabled.png" />
+    <AndroidResource Include="Resources\drawable\moreDisabled.png" />
+    <AndroidResource Include="Resources\drawable\rewardsDisabled.png" />
+    <AndroidResource Include="Resources\drawable\upgrade.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

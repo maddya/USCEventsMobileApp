@@ -140,6 +140,10 @@
     <BundleResource Include="Resources\contact.png" />
     <BundleResource Include="Resources\notifications.png" />
     <BundleResource Include="Resources\forward.png" />
+    <BundleResource Include="Resources\feedsDisabled.png" />
+    <BundleResource Include="Resources\moreDisabled.png" />
+    <BundleResource Include="Resources\rewardsDisabled.png" />
+    <BundleResource Include="Resources\upgrade.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

@@ -31,7 +31,10 @@
 						<Label Text="150 points"/>
 					</ViewCell>
 					<ViewCell>
-						<Label Text="Upgrade to Pro (150 points)"/>
+						<StackLayout Orientation="Horizontal">
+							<Image Source="upgrade.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+							<Label Text="Upgrade to Pro (150 points)"/>
+						</StackLayout>
 					</ViewCell>
 				</TableSection>
 		    </TableRoot>

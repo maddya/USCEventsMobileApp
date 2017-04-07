@@ -9,17 +9,17 @@
             <local:EventsPage />
         </x:Arguments>
     </NavigationPage>
-	<NavigationPage Title="Feed">
+	<NavigationPage Title="Feed" Icon="feedsDisabled.png">
         <x:Arguments>
             <local:FeedPage />
         </x:Arguments>
     </NavigationPage>
-	<NavigationPage Title="Rewards">
+	<NavigationPage Title="Rewards" Icon="rewardsDisabled.png">
         <x:Arguments>
             <local:RewardsPage />
         </x:Arguments>
     </NavigationPage>
-	<NavigationPage Title="More">
+	<NavigationPage Title="More" Icon="moreDisabled.png">
         <x:Arguments>
             <local:MorePage />
         </x:Arguments>
