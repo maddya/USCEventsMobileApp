@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.AccountPage">
+	<ContentPage.Content>
+		<TableView Intent="Settings">
+		    <TableRoot>
+		        <TableSection Title="Profile">
+		            <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Name" />
+                            <Label Text="Sample User"
+                              HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+					<ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Login Method" />
+                            <Label Text="Facebook"
+                              HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+					<ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Email" />
+                            <Label Text="example@gmail.com"
+                              HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+		        </TableSection>
+				<TableSection Title="Account Level: BLANK">
+					<ViewCell>
+						<Label Text="150 points"/>
+					</ViewCell>
+					<ViewCell>
+						<Label Text="Upgrade to Pro (150 points)"/>
+					</ViewCell>
+				</TableSection>
+		    </TableRoot>
+		</TableView>
+	</ContentPage.Content>
+</ContentPage>

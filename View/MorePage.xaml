@@ -1,47 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MorePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MorePage" Title="More">
 	<ContentPage.Content>
-<!--		<StackLayout Spacing="10" x:Name="layout">
-	      	<Label Text="Profle" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />
-			<StackLayout Spacing="10" x:Name="layout2" Orientation="Horizontal">
-				<Label>Name</Label>
-				<Label>Sample User</Label>
-			</StackLayout>
-			<Label Text="Account Level: BLANK" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />
-	      	<BoxView Color="Yellow" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-	        <BoxView HeightRequest="75" Color="Blue" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
-	    </StackLayout>-->
 		<TableView Intent="Settings">
 		    <TableRoot>
-		        <TableSection Title="Profile">
-		            <ViewCell>
+		        <TableSection Title="Connect">
+					<ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Name" />
-                            <Label Text="Sample User" />
+                            <Image Source="contact.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                            <Label Text="Contact" />
                         </StackLayout>
                     </ViewCell>
 					<ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Login Method" />
-                            <Label Text="Facebook"
-                              HorizontalOptions="EndAndExpand" />
-                        </StackLayout>
-                    </ViewCell>
-					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Email" />
-                            <Label Text="example@gmail.com"
-                              HorizontalOptions="EndAndExpand" />
+                            <Image Source="conscious.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                            <Label Text="Apply to Conscious Crew" />
                         </StackLayout>
                     </ViewCell>
 		        </TableSection>
-				<TableSection Title="Account Level: BLANK">
-					<ViewCell>
-						<Label Text="150 points"/>
-					</ViewCell>
-					<ViewCell>
-						<Label Text="Upgrade to Pro (150 points)"/>
-					</ViewCell>
+				<TableSection Title="Settings">
+					<ViewCell Tapped="Account_Clicked">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="account.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                            <Label Text="Account" />
+							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                        </StackLayout>
+                    </ViewCell>
+					<ViewCell Tapped="Notifications_Clicked">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="notifications.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                            <Label Text="Notifications" />
+							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                        </StackLayout>
+                    </ViewCell>
 				</TableSection>
 		    </TableRoot>
 		</TableView>
