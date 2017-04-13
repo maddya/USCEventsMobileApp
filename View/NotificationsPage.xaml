@@ -1,18 +1,54 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.NotificationsPage" Title="Notifications">
 	<ContentPage.Content>
-		<TableView Intent="Settings">
+		<TableView Intent="Settings" RowHeight="68">
 		    <TableRoot>
 		        <TableSection Title="USC Events">
-					<SwitchCell Text="Company Announcements"/>
-					<SwitchCell Text="Volunteer Opportunities"/>
+<!--					<SwitchCell Text="Company Announcements" />-->
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Padding="20">
+							<Label Text="Company Announcements" FontSize="Large" HorizontalOptions="Start"/>
+							<Switch HorizontalOptions="EndAndExpand"></Switch>
+						</StackLayout>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Padding="20">
+							<Label Text="Volunteer Opportunities" FontSize="Large" HorizontalOptions="Start"/>
+							<Switch HorizontalOptions="EndAndExpand"></Switch>
+						</StackLayout>
+					</ViewCell>
 		        </TableSection>
 				<TableSection Title="Event Updates">
-					<SwitchCell Text="The Gorge"/>
-					<SwitchCell Text="Tacoma Dome"/>
-					<SwitchCell Text="Showbox"/>
-					<SwitchCell Text="Foundation"/>
-					<SwitchCell Text="Other Venues"/>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Padding="20">
+							<Label Text="The Gorge" FontSize="Large" HorizontalOptions="Start"/>
+							<Switch HorizontalOptions="EndAndExpand"></Switch>
+						</StackLayout>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Padding="20">
+							<Label Text="Tacoma Dome" FontSize="Large" HorizontalOptions="Start"/>
+							<Switch HorizontalOptions="EndAndExpand"></Switch>
+						</StackLayout>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Padding="20">
+							<Label Text="Showbox" FontSize="Large" HorizontalOptions="Start"/>
+							<Switch HorizontalOptions="EndAndExpand"></Switch>
+						</StackLayout>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Padding="20">
+							<Label Text="Foundation" FontSize="Large" HorizontalOptions="Start"/>
+							<Switch HorizontalOptions="EndAndExpand"></Switch>
+						</StackLayout>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Padding="20">
+							<Label Text="Other Venues" FontSize="Large" HorizontalOptions="Start"/>
+							<Switch HorizontalOptions="EndAndExpand"></Switch>
+						</StackLayout>
+					</ViewCell>
 				</TableSection>
 		    </TableRoot>
 		</TableView>

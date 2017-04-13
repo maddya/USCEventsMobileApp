@@ -1,34 +1,36 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MorePage" Title="More">
 	<ContentPage.Content>
-		<TableView Intent="Settings">
+		<TableView Intent="Settings" RowHeight="68">
 		    <TableRoot>
 		        <TableSection Title="Connect">
-					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="contact.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-                            <Label Text="Contact" />
+					<ViewCell >
+                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
+                            <Image Source="contact.png" HorizontalOptions="Start"/>
+                            <Label Text="Contact" FontSize="Large" HorizontalOptions="StartAndExpand" />
+							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
                         </StackLayout>
                     </ViewCell>
 					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="conscious.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-                            <Label Text="Apply to Conscious Crew" />
+                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
+                            <Image Source="conscious.png" HorizontalOptions="Start" />
+                            <Label Text="Apply to Conscious Crew" FontSize="Large" HorizontalOptions="StartAndExpand"/>
+							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
                         </StackLayout>
                     </ViewCell>
 		        </TableSection>
 				<TableSection Title="Settings">
 					<ViewCell Tapped="Account_Clicked">
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="account.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-                            <Label Text="Account" />
+                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
+                            <Image Source="account.png" HorizontalOptions="Start"/>
+                            <Label Text="Account" FontSize="Large" HorizontalOptions="StartAndExpand"/>
 							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
                         </StackLayout>
                     </ViewCell>
 					<ViewCell Tapped="Notifications_Clicked">
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="notifications.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-                            <Label Text="Notifications" />
+                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
+                            <Image Source="notifications.png" HorizontalOptions="Start"/>
+                            <Label Text="Notifications" FontSize="Large" HorizontalOptions="StartAndExpand"/>
 							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
                         </StackLayout>
                     </ViewCell>

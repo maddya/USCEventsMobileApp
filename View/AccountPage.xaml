@@ -1,39 +1,38 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.AccountPage">
 	<ContentPage.Content>
-		<TableView Intent="Settings">
+		<TableView Intent="Settings" RowHeight="68">
 		    <TableRoot>
 		        <TableSection Title="Profile">
 		            <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Name" />
-                            <Label Text="Sample User"
-                              HorizontalOptions="EndAndExpand" />
+                        <StackLayout Orientation="Horizontal" Padding="20">
+                            <Label Text="Name" FontSize="Large"/>
+                            <Label Text="Sample User" FontSize="Large" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
 					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Login Method" />
-                            <Label Text="Facebook"
-                              HorizontalOptions="EndAndExpand" />
+                        <StackLayout Orientation="Horizontal" Padding="20">
+                            <Label Text="Login Method" FontSize="Large" />
+                            <Label Text="Facebook" FontSize="Large" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
 					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Email" />
-                            <Label Text="example@gmail.com"
-                              HorizontalOptions="EndAndExpand" />
+                        <StackLayout Orientation="Horizontal" Padding="20">
+                            <Label Text="Email" FontSize="Large"/>
+                            <Label Text="example@gmail.com" FontSize="Large" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
 		        </TableSection>
 				<TableSection Title="Account Level: BLANK">
 					<ViewCell>
-						<Label Text="150 points"/>
+						<StackLayout Orientation="Horizontal" Padding="20">
+							<Label Text="150 points" FontSize="Large"/>
+						</StackLayout>
 					</ViewCell>
 					<ViewCell>
-						<StackLayout Orientation="Horizontal">
+						<StackLayout Orientation="Horizontal" Padding="20" Spacing="13">
 							<Image Source="upgrade.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-							<Label Text="Upgrade to Pro (150 points)"/>
+							<Label Text="Upgrade to Pro (150 points)" FontSize="Large"/>
 						</StackLayout>
 					</ViewCell>
 				</TableSection>
