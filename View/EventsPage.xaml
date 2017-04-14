@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.EventsPage" Title="USC Events">
 	<ContentPage.Content>
-		<ListView x:Name="EventsView" RowHeight="55">
+		<ListView x:Name="EventsView" RowHeight="68" ItemSelected="OnItemSelected">
 		    <ListView.ItemTemplate>
 		      <DataTemplate>
-		        <ViewCell>
-					<Grid Padding="5">
+		        <ViewCell >
+					<Grid Padding="10">
 			      		<Grid.RowDefinitions>
 						    <RowDefinition Height="20"></RowDefinition>
 						    <RowDefinition Height="20"></RowDefinition>
@@ -17,8 +17,8 @@
 
 					    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Title}" LineBreakMode="TailTruncation"></Label>
 					    <Label Grid.Row="1" Grid.Column="0" Text="{Binding Venue}" Font="Small"  TextColor="Gray" LineBreakMode="TailTruncation"></Label>
-<!--					    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Source="{Binding Image}" Aspect="AspectFill"/>
--->		      		</Grid>
+					    <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+		      		</Grid>
 <!--		          <ViewCell.View>
 					<StackLayout Orientation="Vertical">
 						<StackLayout Orientation="Horizontal">

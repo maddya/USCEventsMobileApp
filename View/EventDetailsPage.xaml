@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.EventDetailsPage">
+	<ContentPage.Content>
+		<TableView>
+			<TableSection>
+				<TextCell x:Name="title"></TextCell>
+			</TableSection>
+			<TableSection Title="Location">
+				<TextCell x:Name="venue"></TextCell>
+				<TextCell x:Name="venueAddress"></TextCell>
+			</TableSection>
+			<TableSection Title="Details">
+				<TextCell x:Name="time"></TextCell>
+				<TextCell x:Name="description"></TextCell>
+			</TableSection>
+		</TableView>
+	</ContentPage.Content>
+</ContentPage>

@@ -48,6 +48,9 @@
     <EmbeddedResource Include="View\NotificationsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\EventDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,7 +72,6 @@
     <Compile Include="View\USCEventsPage.xaml.cs">
       <DependentUpon>USCEventsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MoreListPage.cs" />
     <Compile Include="View\MorePage.xaml.cs">
       <DependentUpon>MorePage.xaml</DependentUpon>
     </Compile>
@@ -78,6 +80,9 @@
     </Compile>
     <Compile Include="Models\Event.cs" />
     <Compile Include="Services\EventsService.cs" />
+    <Compile Include="View\EventDetailsPage.xaml.cs">
+      <DependentUpon>EventDetailsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
