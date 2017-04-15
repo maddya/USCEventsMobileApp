@@ -1,6 +1,46 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RewardsPage" Title="Rewards">
 	<ContentPage.Content>
-		<Label>Rewards</Label>
+		<TableView Intent="Settings">
+		    <TableRoot>
+		        <TableSection Title="Rewards">
+					<ViewCell>
+                        <StackLayout Orientation="Horizontal">
+<!--                        <Image Source= *** HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+                            <Entry Placeholder="Enter Ticket Code" />
+							<Label Text="Your Points: 150"/>
+                        </StackLayout>
+                    </ViewCell>
+		        </TableSection>
+				<TableSection Title="150 POINTS">
+					<ViewCell>
+                        <StackLayout Orientation="Horizontal">
+<!--                        <Image Source= *** HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+                            <Label Text="PRO ACCOUNT" />
+                        </StackLayout>
+                    </ViewCell>
+				</TableSection>
+				<TableSection Title="400 POINTS">
+					<ViewCell>
+                        <StackLayout Orientation="Horizontal">
+<!--                        <Image Source= *** HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+                            <Label Text="VIP UPGRADE" />
+                        </StackLayout>
+						<StackLayout Orientation="Horizontal">
+<!--                        <Image Source= *** HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+                            <Label Text="FOUNDATION DRINK SLIP" />
+                        </StackLayout>
+                    </ViewCell>
+				</TableSection>
+				<TableSection Title="blank">
+					<ViewCell>
+						<StackLayout Orientation="Horizontal">
+							<Label>Rewards</Label>
+							<Entry Placeholder="Enter Ticket Code"/>
+						</StackLayout>
+					</ViewCell>
+				</TableSection>
+		    </TableRoot>
+		</TableView>
 	</ContentPage.Content>
 </ContentPage>
