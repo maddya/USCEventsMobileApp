@@ -1,18 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using USCEvents.Models;
+using Xamarin.Forms;
 
 namespace USCEvents.Services
 {
+	public class GoogleSheetsResponse
+	{
+		public string range { get; set; }
+		public string majorDimension { get; set; }
+		public List<List<string>> values { get; set; }
+	}
+
 	public class EventsService
 	{
-		public const string Domain = "http://ourdomain.com/";
+		public HttpClient client = new HttpClient();
+
+		public async Task<List<Event>> RefreshDataAsync()
+		{
+			var uri = new Uri($"{Configuration.GoogleSheetsDomain}/{Configuration.EventsSpreadsheetId}/values/{Configuration.EventsRangeQuery}?key={Configuration.GoogleSheetsAPIKey}");
+		 	var response = await client.GetAsync(uri);
+			GoogleSheetsResponse Item;
+			List<Event> events = new List<Event>();
+			if (response.IsSuccessStatusCode)
+			{
+				var content = await response.Content.ReadAsStringAsync();
+				Item = JsonConvert.DeserializeObject<GoogleSheetsResponse>(content);
+				foreach (var e in Item.values)
+				{
+					events.Add(new Event { 
+						Title = e[0],
+						Venue = e[1],
+						VenueAdress = e[2],
+						Description = e[3],
+						StartDateAndTime = e[4] + " " + e[5],
+						EndDateAndTime = e[6] + " " + e[7],
+						VenueAndDate = e[1] + " - " + e[4],
+						EventImageSource = e[8]});
+				}
+				return events;
+			}
+
+			return null;
+		}
+
+		public Image GetImage()
+		{
+			var webImage = new Image { Aspect = Aspect.AspectFit };
+			webImage.Source = ImageSource.FromUri(new Uri("https://help.seesaw.me/hc/en-us/article_attachments/201790359/student-icon-puppy.png"));
+			return webImage;
+		}
+
 
 		public List<Event> GetEvents()
 		{
-			// This is where we would make an API call, and get back JSON data
-			// then we would format that data, and return it as a list of Events
+			var events = Task.Run(RefreshDataAsync).Result;
+			return events;
+		}
+
+		public List<Event> GetDummyEvents()
+		{
 			var events = new List<Event>();
 			events.Add(new Event { Title = "Bass Academy", 
 				Venue = "Tacoma Dome",
