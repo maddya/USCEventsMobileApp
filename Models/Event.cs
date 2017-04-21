@@ -7,11 +7,11 @@ namespace USCEvents.Models
 		public string Venue { get; set; }
 		public string VenueAdress { get; set; }
 		public string Description { get; set; }
-		public string StartDateAndTime { get; set; }
-		public string EndDateAndTime { get; set; }
-		public string VenueAndDate { get; set; }
+		public DateTime StartDateAndTime { get; set; }
+		public DateTime EndDateAndTime { get; set; }
 		public string EventImageSource { get; set; }
-		//public DateTime StartTime { get; set; }
-		//public DateTime EndTime { get; set; }
+		public string StartDateDisplayString { get; set; }
+		public string EndDateDisplayString { get; set; }
+		public string TimeDisplayString { get; set; }
 	}
 }
