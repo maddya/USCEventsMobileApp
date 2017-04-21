@@ -95,6 +95,7 @@
     <Compile Include="View\MyRewardsPage.xaml.cs">
       <DependentUpon>MyRewardsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
@@ -112,20 +113,8 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Apis.Core">
-      <HintPath>packages\Google.Apis.Core.1.25.0\lib\portable-net45+sl50+netcore45+wpa81+wp8\Google.Apis.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Auth">
-      <HintPath>packages\Google.Apis.Auth.1.25.0\lib\portable-net45+sl50+netcore45+wpa81+wp8\Google.Apis.Auth.dll</HintPath>
-    </Reference>
     <Reference Include="Zlib.Portable">
       <HintPath>packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis">
-      <HintPath>packages\Google.Apis.1.25.0\lib\portable-net45+sl50+netcore45+wpa81+wp8\Google.Apis.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Sheets.v4">
-      <HintPath>packages\Google.Apis.Sheets.v4.1.25.0.827\lib\portable-net45+netcore45+wpa81+wp8\Google.Apis.Sheets.v4.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.10.0.2\lib\portable-net45+win8+wpa81+wp8\Newtonsoft.Json.dll</HintPath>
