@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RewardsPage" Title="Rewards">
 	<ContentPage.Content>
-		<TableView Intent="Settings">
+		<TableView Intent="Settings" RowHeight="68">
 		    <TableRoot>
-		        <TableSection Title="Rewards">
-					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-<!--                        <Image Source= *** HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
-                            <Entry Placeholder="Enter Ticket Code" />
-							<Label Text="Your Points: 150"/>
+
+				<TableSection Title="SECTION TITLE 1">
+					<ViewCell Tapped="CheckIn_Clicked">
+                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
+<!--                            <Image Source="event.png" HorizontalOptions="Start"/>-->
+                            <Label Text="Event Check In" FontSize="Large" HorizontalOptions="StartAndExpand" />
+							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                        </StackLayout>
+                    </ViewCell>
+					<ViewCell Tapped="MyRewards_Clicked">
+                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
+<!--                            <Image Source="myrewards.png" HorizontalOptions="Start" />-->
+                            <Label Text="My Rewards" FontSize="Large" HorizontalOptions="StartAndExpand"/>
+							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
                         </StackLayout>
                     </ViewCell>
 		        </TableSection>
-				<TableSection Title="150 POINTS">
+				
+		        <TableSection Title="150 POINTS">
 					<ViewCell>
                         <StackLayout Orientation="Horizontal">
-<!--                        <Image Source= *** HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
-                            <Label Text="PRO ACCOUNT" />
+<!--                        <Image Source="merch.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+							<Label Text="MERCH THING 1"/>
+                        </StackLayout>
+                    </ViewCell>
+		        </TableSection>
+				
+				<TableSection Title="300 POINTS">
+					<ViewCell>
+                        <StackLayout Orientation="Horizontal">
+<!--                        <Image Source="show.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+                            <Label Text="EVENT VIP UPGRADE" />
                         </StackLayout>
                     </ViewCell>
 				</TableSection>
+				
 				<TableSection Title="400 POINTS">
 					<ViewCell>
                         <StackLayout Orientation="Horizontal">
-<!--                        <Image Source= *** HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
-                            <Label Text="VIP UPGRADE" />
+<!--                        <Image Source="merch.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+                            <Label Text="MERCH THING 2" />
                         </StackLayout>
-						<StackLayout Orientation="Horizontal">
-<!--                        <Image Source= *** HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
-                            <Label Text="FOUNDATION DRINK SLIP" />
-                        </StackLayout>
-                    </ViewCell>
-				</TableSection>
-				<TableSection Title="blank">
+					</ViewCell>
 					<ViewCell>
 						<StackLayout Orientation="Horizontal">
-							<Label>Rewards</Label>
-							<Entry Placeholder="Enter Ticket Code"/>
-						</StackLayout>
-					</ViewCell>
+<!--                        <Image Source="show.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
+                            <Label Text="EVENT VIP UPGRADE" />
+                        </StackLayout>
+                    </ViewCell>
 				</TableSection>
 		    </TableRoot>
 		</TableView>
