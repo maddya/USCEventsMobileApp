@@ -12,11 +12,6 @@ namespace USCEvents
 			InitializeComponent();
 		}
 
-		public async void Notifications_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new NotificationsPage());
-		}
-
 		public async void Account_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new AccountPage());

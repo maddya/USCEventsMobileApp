@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MorePage" Title="More">
 	<ContentPage.Content>
 		<TableView Intent="Settings" RowHeight="68">
@@ -24,13 +24,6 @@
                         <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
                             <Image Source="account.png" HorizontalOptions="Start"/>
                             <Label Text="Account" FontSize="Large" HorizontalOptions="StartAndExpand"/>
-							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-                        </StackLayout>
-                    </ViewCell>
-					<ViewCell Tapped="Notifications_Clicked">
-                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
-                            <Image Source="notifications.png" HorizontalOptions="Start"/>
-                            <Label Text="Notifications" FontSize="Large" HorizontalOptions="StartAndExpand"/>
 							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
                         </StackLayout>
                     </ViewCell>
