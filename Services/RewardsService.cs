@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -10,8 +11,8 @@ namespace USCEvents.Services
 {
 	public class GoogleSheetsRewardsResponse
 	{
-		public string range { get; set; }
-		public string majorDimension { get; set; }
+		//public string range { get; set; }
+		//public string majorDimension { get; set; }
 		public List<List<string>> values { get; set; }
 	}
 
@@ -36,15 +37,16 @@ namespace USCEvents.Services
 						Title = r[0],
 						Description = r[1],
 						ExpDateAndTime = r[2] + " " + r[3],
-						Points = r[4],
-						Fname = r[5],
-						Lname = r[6],
-						Type = r[7]
+						Points = int.Parse(r[4]),
+						//Fname = r[5],
+						//Lname = r[6],
+						Type = r[5],
+						RewardsImage = r[5]+".png"
 					});
+					
 				}
 				return rewards;
 			}
-
 			return null;
 		}
 

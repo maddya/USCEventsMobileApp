@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RewardsDetailsPage">
+	<ContentPage.Content>
+		<TableView>
+			<TableSection>
+				<ImageCell x:Name="img"></ImageCell>
+			</TableSection>
+			<TableSection>
+				<TextCell x:Name="title"></TextCell>
+			</TableSection>
+			<TableSection>
+				<TextCell x:Name="desc"></TextCell>
+			</TableSection>
+			<!--<TableSection Title="Points">
+				<TextCell x:Name="point"></TextCell>
+			</TableSection>-->
+		</TableView>
+	</ContentPage.Content>
+</ContentPage>
+
