@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using USCEvents.Models;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace USCEvents.Services
 {
@@ -25,8 +26,10 @@ namespace USCEvents.Services
 		 	var response = await client.GetAsync(uri);
 			GoogleSheetsResponse Item;
 			List<Event> events = new List<Event>();
+			//Debug.WriteLine("events");
 			if (response.IsSuccessStatusCode)
 			{
+				//Debug.WriteLine("success");
 				var content = await response.Content.ReadAsStringAsync();
 				Item = JsonConvert.DeserializeObject<GoogleSheetsResponse>(content);
 				foreach (var e in Item.values)
@@ -41,9 +44,9 @@ namespace USCEvents.Services
 						VenueAndDate = e[1] + " - " + e[4],
 						EventImageSource = e[8]});
 				}
+				//Debug.WriteLine("events: " + events);
 				return events;
 			}
-
 			return null;
 		}
 
