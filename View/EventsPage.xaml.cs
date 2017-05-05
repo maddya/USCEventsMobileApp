@@ -20,17 +20,26 @@ namespace USCEvents
 			InitializeComponent();
 			events = eventsService.GetEvents();
 
-			 Task.Run(new Func<Task>(async() =>
-		    {
-		         var events2 = await eventsService.GetGoogleEvents();
-		    }));
-		      
-			EventsView.ItemsSource = events;
-			EventsView.ItemTapped += async (sender, e) =>
-			{
-				await Navigation.PushAsync(new EventDetailsPage(e.Item as Event));
-				((ListView)sender).SelectedItem = null;
-			};
+			var eventTest = initEvents().ContinueWith((arg) => { 
+				EventsView.ItemsSource = events;
+				EventsView.ItemTapped += async(sender, e) =>
+				{
+					await Navigation.PushAsync(new EventDetailsPage(e.Item as Event));
+					((ListView)sender).SelectedItem = null;
+				};
+				});
 		}
+
+		public async Task initEvents()
+		{
+			// Task.Run(new Func<Task>(async() =>
+			//{
+			var events2 = await eventsService.GetGoogleEvents();
+			//}));
+
+
+		}
+
+
 	}
 }

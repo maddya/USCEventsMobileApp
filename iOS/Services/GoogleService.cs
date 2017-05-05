@@ -22,7 +22,7 @@ namespace USCEvents.iOS
 		public string[] Scopes { get; set; }
 		public string ApplicationName { get; set; }
 
-		private readonly string[] _scopes = { SheetsService.Scope.SpreadsheetsReadonly };
+		private readonly string[] _scopes = { SheetsService.Scope.SpreadsheetsReadonly, SheetsService.Scope.Spreadsheets };
 		private readonly string _applicationName = "Google Sheets API .NET Quickstart";
 
 		private SheetsService _service;
@@ -41,19 +41,21 @@ namespace USCEvents.iOS
 			UserCredential credential;
 			using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
 			{
-				string credPath = System.Environment.GetFolderPath(
-					System.Environment.SpecialFolder.Personal);
-				credPath = Path.Combine(credPath, ".credentials/sheets.googleapis.com-dotnet-quickstart.json");
+var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+var libPath = Path.Combine(docsPath, "..", "Library");
+				string credPath = libPath;
+				credPath = Path.Combine(credPath, "");
 				var secrets = GoogleClientSecrets.Load(stream).Secrets;
 				var folder = new FileDataStore(credPath, true);
-
-				credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(
+				GoogleWebAuthorizationBroker.Folder = folder.ToString();
+				credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
 					secrets,
 					Scopes,
 					"user",
 					CancellationToken.None,
-					folder);
+					folder).Result;
 			}
+
 			return new SheetsService(new BaseClientService.Initializer()
 			{
 				HttpClientInitializer = credential,
