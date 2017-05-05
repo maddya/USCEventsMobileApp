@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -20,12 +21,12 @@ namespace USCEvents.Services
 	{
 		public HttpClient client = new HttpClient();
 
-		public async Task<List<Reward>> RefreshRewardsDataAsync()
+		public async Task<ObservableCollection<Reward>> RefreshRewardsDataAsync()
 		{
 			var uri = new Uri($"{Configuration.GoogleSheetsDomain}/{Configuration.RewardsSpreadsheetId}/values/{Configuration.RewardsRangeQuery}?key={Configuration.GoogleSheetsAPIKey}");
 			var response = await client.GetAsync(uri);
 			GoogleSheetsRewardsResponse Item;
-			List<Reward> rewards = new List<Reward>();
+			ObservableCollection<Reward> rewards = new ObservableCollection<Reward>();
 			if (response.IsSuccessStatusCode)
 			{
 				var content = await response.Content.ReadAsStringAsync();
@@ -50,7 +51,7 @@ namespace USCEvents.Services
 			return null;
 		}
 
-		public List<Reward> GetRewards()
+		public ObservableCollection<Reward> GetRewards()
 		{
 			var rewards = Task.Run(RefreshRewardsDataAsync).Result;
 			return rewards;
