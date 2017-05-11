@@ -12,6 +12,10 @@ namespace USCEvents
 {
 	public partial class RewardsPage : ContentPage
 	{
+		//void Handle_Clicked(object sender, System.EventArgs e)
+		//{
+		//	throw new NotImplementedException();
+		//}
 
 		private ObservableCollection<Reward> rewards { get; set; }
 		//private ObservableCollection<Grouping<Reward>> RewardsGrouped { get; set; }
@@ -22,24 +26,32 @@ namespace USCEvents
 		{
 			InitializeComponent();
 			rewards = rewardsService.GetRewards();
-			//Use linq to sorty our monkeys by name and then group them by the new name sort property
-			//var sorted = from Reward in rewards
-			//			 orderby Reward.Points
-			//			 group Reward by Reward.Points into rewardsGroup
-			//			 select new Grouping<Reward>(rewardsGroup);
-
-			//////create a new collection of groups
-			//RewardsGrouped = new ObservableCollection<Grouping<Reward>>(sorted);
 
 
 			RewardsView.ItemsSource = rewards;
-		}
-	
+			//CheckinButton.Clicked += OnCheckinClicked;
+			//My_rew.Clicked += OnMyRewardsClicked;
 
+		}
+
+		//Select reward --> details page of that reward
 		private void OnRewardSelected(object sender, SelectedItemChangedEventArgs e)
 		{
 			var item = e.SelectedItem;
 			Navigation.PushAsync(new RewardsDetailsPage((Reward)item));
+		}
+
+		//my rewards selected --> my rewards page
+		private void OnMyRewardsClicked(object sender, EventArgs e)
+		{
+			//var item = e.SelectedItem;
+			Navigation.PushAsync(new MyRewardsPage());
+		}
+
+		//Checkin selected --> check in page
+		private void OnCheckinClicked(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new CheckinPage());
 		}
 	}
 }

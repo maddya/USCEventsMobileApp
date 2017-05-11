@@ -145,6 +145,9 @@
     <BundleResource Include="Resources\upgrade.png" />
     <BundleResource Include="Resources\Merch.png" />
     <BundleResource Include="Resources\Show.png" />
+    <BundleResource Include="Resources\Checkin.png" />
+    <BundleResource Include="Resources\MyRewards.png" />
+    <BundleResource Include="Resources\CheckinDetail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

@@ -27,11 +27,12 @@ namespace USCEvents.Services
 			var response = await client.GetAsync(uri);
 			GoogleSheetsRewardsResponse Item;
 			ObservableCollection<Reward> rewards = new ObservableCollection<Reward>();
+			//Dictionary<int, Reward> point_values = new Dictionary<int, Reward>();
 			if (response.IsSuccessStatusCode)
 			{
 				var content = await response.Content.ReadAsStringAsync();
 				Item = JsonConvert.DeserializeObject<GoogleSheetsRewardsResponse>(content);
-				foreach (var r in Item.values)
+				foreach (var r in Item.values) //each item in the sheet
 				{
 					rewards.Add(new Reward
 					{
@@ -44,6 +45,16 @@ namespace USCEvents.Services
 						Type = r[5],
 						RewardsImage = r[5]+".png"
 					});
+					//if point value exists already
+					//if (point_values.ContainsKey(int.Parse(r[4])))
+     //  				{
+     //       			//add r to be associated with that value 
+
+     //   			}
+					//else 
+					//{
+					//	point_values.Add(int.Parse(r[4]),new List<Reward> (r)
+						
 					
 				}
 				return rewards;

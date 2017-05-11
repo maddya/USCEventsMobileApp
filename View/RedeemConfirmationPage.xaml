@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RedeemConfirmationPage">
+	<ContentPage.Content>
+		<ScrollView Orientation="Vertical"> 
+			<StackLayout Orientation="Vertical" Spacing="24" BackgroundColor="#f6f6f6" VerticalOptions="Fill">
+				<Image x:Name="image" HeightRequest="120"/>
+				<Label Text="Prize Added!" Font="Bold, 24" HorizontalTextAlignment="Center"/>
+				<Label x:Name="rew_description" HorizontalTextAlignment="Center"/>
+				<Label x:Name="curPoints" HorizontalTextAlignment="Center"/>
+				<RelativeLayout VerticalOptions="End">
+					<BoxView x:Name="ViewMyRew" Color="#c900c6" HeightRequest="65" 
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+					<Label x:Name="ViewRew" Text="View My Rewards" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+					RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+					RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+				</RelativeLayout>
+			</StackLayout>
+
+
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

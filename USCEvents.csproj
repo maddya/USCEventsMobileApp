@@ -53,6 +53,15 @@
     <EmbeddedResource Include="View\RewardsDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CheckinPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MyRewardsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RedeemConfirmationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +101,15 @@
       <DependentUpon>RewardsDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Grouping.cs" />
+    <Compile Include="View\CheckinPage.xaml.cs">
+      <DependentUpon>CheckinPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MyRewardsPage.xaml.cs">
+      <DependentUpon>MyRewardsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RedeemConfirmationPage.xaml.cs">
+      <DependentUpon>RedeemConfirmationPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
