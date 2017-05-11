@@ -44,7 +44,7 @@ namespace USCEvents
 
 			if (accessToken != "")
 			{
-				await getFacebookProfileAsync(accessToken);
+				await GetFacebookProfileAsync(accessToken);
 			}
 		}
 
