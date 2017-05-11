@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using USCEvents.Services;
 using Xamarin.Forms;
 
 namespace USCEvents
@@ -9,7 +9,9 @@ namespace USCEvents
 	{
 		public MyRewardsPage()
 		{
+			FirebaseService f = new FirebaseService();
 			InitializeComponent();
+			f.postData();
 		}
 	}
 }
