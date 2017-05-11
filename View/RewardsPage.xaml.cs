@@ -7,6 +7,7 @@ using USCEvents.Models;
 using USCEvents.Services;
 using Xamarin.Forms;
 using System.Linq;
+using System.Diagnostics;
 
 namespace USCEvents
 {
@@ -17,7 +18,7 @@ namespace USCEvents
 		//	throw new NotImplementedException();
 		//}
 
-		private ObservableCollection<Reward> rewards { get; set; }
+		private Dictionary<int, List<Reward>> rewards { get; set; }
 		//private ObservableCollection<Grouping<Reward>> RewardsGrouped { get; set; }
 		private RewardsService rewardsService = new RewardsService();
 
@@ -25,10 +26,13 @@ namespace USCEvents
 		public RewardsPage()
 		{
 			InitializeComponent();
-			rewards = rewardsService.GetRewards();
-
-
-			RewardsView.ItemsSource = rewards;
+			rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
+			Debug.WriteLine(rewards);
+			RewardsView.IsGroupingEnabled = true;
+			RewardsView.ItemsSource = rewards.Values;
+			//RewardsView.GroupHeaderTemplate = rewards.Keys;
+			//RewardsView.GroupDisplayBinding = rewards.Key;
+			//RewardsView.GroupShortNameBinding = rewards.Key;
 			//CheckinButton.Clicked += OnCheckinClicked;
 			//My_rew.Clicked += OnMyRewardsClicked;
 
