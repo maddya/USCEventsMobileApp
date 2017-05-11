@@ -29,7 +29,7 @@ namespace USCEvents.Services
 			if (response.IsSuccessStatusCode)
 			{
 				var content = await response.Content.ReadAsStringAsync();
-				Item = JsonConvert.DeserializeObject<GoogleSheetsResponse>(content);
+				Item = JsonConvert.DeserializeObject<GoogleSheetsResponse>(content); //LOOK AT THIS FOR JSON FORMATTING
 				foreach (var e in Item.values)
 				{
 					events.Add(new Event { 
