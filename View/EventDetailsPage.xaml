@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.EventDetailsPage">
 	<ContentPage.Content>
-		<TableView>
-			<TableSection>
-				<TextCell x:Name="title"></TextCell>
-			</TableSection>
-			<TableSection Title="Location">
-				<TextCell x:Name="venue"></TextCell>
-				<TextCell x:Name="venueAddress"></TextCell>
-			</TableSection>
-			<TableSection Title="Details">
-				<TextCell x:Name="time"></TextCell>
-				<TextCell x:Name="description"></TextCell>
-			</TableSection>
-		</TableView>
+		<ScrollView>
+			<StackLayout Orientation="Vertical" Spacing="0">
+			<Image x:Name="image"></Image>
+				<RelativeLayout>
+					<BoxView Color="#c900c6" HeightRequest="108"
+            			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+					<Label x:Name="title" FontAttributes="Bold" FontSize="25" TextColor="White" HorizontalTextAlignment="Start"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=15}" 
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=30}"/>
+					<Label x:Name="venue" FontAttributes="Bold" FontSize="18" TextColor="White" HorizontalTextAlignment="Start"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=42}" 
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=30}"/>
+					<Label x:Name="date" FontAttributes="Bold" FontSize="18" TextColor="White" HorizontalTextAlignment="Start"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=56}" 
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=30}"/>
+					<Label x:Name="time" FontAttributes="Bold" FontSize="18" TextColor="White" HorizontalTextAlignment="Start"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=68}" 
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=30}"/>
+					<BoxView Color="#f6f6f6" HeightRequest="120"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=108}"
+            			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+					<Label x:Name="description" FontSize="13" TextColor="#484848" HorizontalTextAlignment="Start" LineBreakMode="WordWrap"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=126}" 
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.92}" 
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=18}"/>
+				</RelativeLayout>
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
