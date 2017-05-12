@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RewardsPage" Title="Your Points: ">
 	<ContentPage.Content>
-		<ScrollView>
 		<!--<Image Source="Checkin.png"></Image>-->
 			<ListView x:Name="RewardsView" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected" Header="Check-in">
 				<ListView.HeaderTemplate >
 				  <DataTemplate>
 				    <StackLayout Orientation="Horizontal" HeightRequest="58">
-						<Button HorizontalOptions="Start" Clicked="OnCheckinClicked" Margin="0,12,0,12" x:Name="CheckinButton" Image="Checkin.png" Text="Check-In" FontSize="16" TextColor="Black"/>
+						<Button HorizontalOptions="Start" Clicked="OnCheckinClicked" Margin="0,12,0,12" x:Name="CheckinButton" Image="Checkin.png" FontSize="16" TextColor="Black"/>
 						<!--<Image x:Name="C_in" Source="Checkin.png" WidthRequest="34" Margin="12"/><Label x:Name="Ck" Text="Check-in" VerticalTextAlignment="Center"/>-->
-						<Button HorizontalOptions="Center" Clicked="OnMyRewardsClicked" Margin="0,12,0,12" Image="MyRewards.png" Text="My Rewards" FontSize="16" TextColor="Black"/>
+						<Button HorizontalOptions="Center" Clicked="OnMyRewardsClicked" Margin="0,12,0,12" Image="MyRewards.png" FontSize="16" TextColor="Black"/>
 				    </StackLayout>
 				  </DataTemplate>
 				</ListView.HeaderTemplate>
@@ -27,6 +26,5 @@
 			       </DataTemplate>
 			     </ListView.ItemTemplate>
 			</ListView>
-			</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
