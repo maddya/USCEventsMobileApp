@@ -1,6 +1,12 @@
 ﻿using System;
+using System.Net.Http;
 using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using Model;
+using Newtonsoft.Json;
+using USCEvents.Models;
+using USCEvents.Services;
 using Xamarin.Forms;
 
 namespace USCEvents
@@ -82,9 +88,9 @@ namespace USCEvents
 
 			var userJSON = await httpClient.GetStringAsync(requestURL);
 
-			var facebookInformation = JsonConvert.DeserializeObject<FacebookInformation>(userJson);
+			var facebookInformation = JsonConvert.DeserializeObject<FacebookInformation>(userJSON);
 
-			return facebookProfile;
+			return facebookInformation;
 		}
 	}
 }

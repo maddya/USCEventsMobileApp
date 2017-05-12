@@ -4,6 +4,8 @@ namespace USCEvents
 {
 	public partial class App : Application
 	{
+		public static string accessToken;
+
 		public App()
 		{
 			InitializeComponent();
