@@ -15,7 +15,7 @@ namespace USCEvents
 	public partial class LogInPage : ContentPage
 	{
 		private String ClientID = "1338914686200042";
-
+		public static string LOGIN_COMPLETE = "login_complete";
 
 		public LogInPage()
 		{
@@ -35,7 +35,7 @@ namespace USCEvents
 
 			webView.Navigated += WebViewOnNavigated;
 
-			Contact = webView;
+			Content = webView;
 		}
 
 		private async void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
@@ -44,7 +44,11 @@ namespace USCEvents
 
 			if (accessToken != "")
 			{
-				await GetFacebookProfileAsync(accessToken);
+				//await GetFacebookProfileAsync(accessToken);
+
+				App.accessToken = accessToken;
+				MessagingCenter.Send<LogInPage, string>(this, LogInPage.LOGIN_COMPLETE, accessToken);
+				await Navigation.PopModalAsync();
 			}
 		}
 
@@ -67,7 +71,7 @@ namespace USCEvents
 			return string.Empty;
 		}
 
-		public async Task GetFacebookProfileAsync(string accessToken)
+		public async Task<FacebookInformation> GetFacebookProfileAsync(string accessToken)
 		{
 			var requestURL =
 				"https://graph.facebook.com/v2.7/me/"
@@ -77,6 +81,10 @@ namespace USCEvents
 			var httpClient = new HttpClient();
 
 			var userJSON = await httpClient.GetStringAsync(requestURL);
+
+			var facebookInformation = JsonConvert.DeserializeObject<FacebookInformation>(userJson);
+
+			return facebookProfile;
 		}
 	}
 }

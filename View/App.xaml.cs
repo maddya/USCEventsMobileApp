@@ -8,7 +8,8 @@ namespace USCEvents
 		{
 			InitializeComponent();
 
-			MainPage = new USCEventsPage();
+			MainPage = new NavigationPage(new LogInPage());
+			//MainPage = new USCEventsPage();
 		}
 
 		protected override void OnStart()
