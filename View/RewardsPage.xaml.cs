@@ -35,7 +35,6 @@ namespace USCEvents
 			//RewardsView.GroupShortNameBinding = rewards.Key;
 			//CheckinButton.Clicked += OnCheckinClicked;
 			//My_rew.Clicked += OnMyRewardsClicked;
-
 		}
 
 		//Select reward --> details page of that reward
