@@ -4,11 +4,15 @@ namespace USCEvents
 {
 	public partial class App : Application
 	{
+
+		public static string accessToken;
+
 		public App()
 		{
 			InitializeComponent();
 
-			MainPage = new USCEventsPage();
+			//MainPage = new USCEventsPage();
+			MainPage = new NavigationPage(new LoginPage());
 		}
 
 		protected override void OnStart()
