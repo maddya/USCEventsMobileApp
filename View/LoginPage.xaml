@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.LoginPage">
 	<StackLayout>
-		<Button Text="Login with Facebook" Clicked="Handle_Clicked"/>
-		<StackLayout Orientation="Horizontal">
+
+		<StackLayout Orientation="Vertical">
+			<Image Source="background.jpg" HeightRequest="300"/>
+			<Button Text="Login with Facebook" Clicked="Handle_Clicked"/>
+		</StackLayout>
+
+
+		<StackLayout Orientation="Vertical">
 			<Image x:Name="profileImage" WidthRequest="100" HeightRequest="100"/>
 			<Label x:Name="name"/>
 		</StackLayout>
