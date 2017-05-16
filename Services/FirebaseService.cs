@@ -25,17 +25,15 @@ namespace USCEvents.Services
 		//	auth = await authProvider.CreateUserWithEmailAndPasswordAsync("maddyaustin55@gmail.com", "password");
 		//}
 
-		public async void postData()
+		public async void PostData()
 		{
 			// add new item to list of data 
 			var item = await firebase
-				.Child("usceventsapp")
+				.Child("Life in Color 2017")
 			  	//.WithAuth("<Authentication Token>") // <-- Add Auth token if required. Auth instructions further down in readme.
 				.PostAsync(new UserEventReward
 				{
 					LegalUserName = "Madeleine Austin",
-					EventName = "Life in Color",
-					EventYear = "2017"
 				}, false);
 
 			// note that there is another overload for the PostAsync method which delegates the new key generation to the client
