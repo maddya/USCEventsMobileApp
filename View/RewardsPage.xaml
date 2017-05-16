@@ -1,59 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RewardsPage" Title="Rewards">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RewardsPage" Title="Your Points: ">
 	<ContentPage.Content>
-		<TableView Intent="Settings" RowHeight="68">
-		    <TableRoot>
-
-				<TableSection Title="SECTION TITLE 1">
-					<ViewCell Tapped="CheckIn_Clicked">
-                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
-<!--                            <Image Source="event.png" HorizontalOptions="Start"/>-->
-                            <Label Text="Event Check In" FontSize="Large" HorizontalOptions="StartAndExpand" />
-							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-                        </StackLayout>
-                    </ViewCell>
-					<ViewCell Tapped="MyRewards_Clicked">
-                        <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
-<!--                            <Image Source="myrewards.png" HorizontalOptions="Start" />-->
-                            <Label Text="My Rewards" FontSize="Large" HorizontalOptions="StartAndExpand"/>
-							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
-                        </StackLayout>
-                    </ViewCell>
-		        </TableSection>
-				
-		        <TableSection Title="150 POINTS">
-					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-<!--                        <Image Source="merch.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
-							<Label Text="MERCH THING 1"/>
-                        </StackLayout>
-                    </ViewCell>
-		        </TableSection>
-				
-				<TableSection Title="300 POINTS">
-					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-<!--                        <Image Source="show.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
-                            <Label Text="EVENT VIP UPGRADE" />
-                        </StackLayout>
-                    </ViewCell>
-				</TableSection>
-				
-				<TableSection Title="400 POINTS">
-					<ViewCell>
-                        <StackLayout Orientation="Horizontal">
-<!--                        <Image Source="merch.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
-                            <Label Text="MERCH THING 2" />
-                        </StackLayout>
-					</ViewCell>
-					<ViewCell>
-						<StackLayout Orientation="Horizontal">
-<!--                        <Image Source="show.png" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>-->
-                            <Label Text="EVENT VIP UPGRADE" />
-                        </StackLayout>
-                    </ViewCell>
-				</TableSection>
-		    </TableRoot>
-		</TableView>
+		<!--<Image Source="Checkin.png"></Image>-->
+			<ListView x:Name="RewardsView" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected" Header="Check-in">
+				<ListView.HeaderTemplate >
+				  <DataTemplate>
+				    <StackLayout Orientation="Horizontal" HeightRequest="58">
+						<Button HorizontalOptions="Start" Clicked="OnCheckinClicked" Margin="0,12,0,12" x:Name="CheckinButton" Image="Checkin.png" Text="Check In" FontSize="16" TextColor="Black"/>
+						<!--<Image x:Name="C_in" Source="Checkin.png" WidthRequest="34" Margin="12"/><Label x:Name="Ck" Text="Check-in" VerticalTextAlignment="Center"/>-->
+						<Button HorizontalOptions="Center" Clicked="OnMyRewardsClicked" Margin="0,12,0,12" Image="MyRewards.png" Text="My Rewards" FontSize="16" TextColor="Black"/>
+				    </StackLayout>
+				  </DataTemplate>
+				</ListView.HeaderTemplate>
+				<ListView.GroupHeaderTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Label Text="{Binding Points}"/>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.GroupHeaderTemplate>
+				<ListView.ItemTemplate>
+			       <DataTemplate>
+						<!--<ImageCell ImageSource ="Checkin.png"></ImageCell>-->
+			       		<ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
+			       </DataTemplate>
+			     </ListView.ItemTemplate>
+			</ListView>
 	</ContentPage.Content>
 </ContentPage>

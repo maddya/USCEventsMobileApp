@@ -44,5 +44,7 @@
 	<string></string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location Tracking for Event Check-in Verification</string>
 </dict>
 </plist>

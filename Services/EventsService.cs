@@ -23,7 +23,7 @@ namespace USCEvents.Services
 		public async Task<List<Event>> RefreshDataAsync()
 		{
 			var uri = new Uri($"{Configuration.GoogleSheetsDomain}/{Configuration.EventsSpreadsheetId}/values/{Configuration.EventsRangeQuery}?key={Configuration.GoogleSheetsAPIKey}");
-		 	var response = await client.GetAsync(uri);
+			var response = await client.GetAsync(uri);
 			GoogleSheetsResponse Item;
 			List<Event> events = new List<Event>();
 			if (response.IsSuccessStatusCode)
@@ -32,14 +32,16 @@ namespace USCEvents.Services
 				Item = JsonConvert.DeserializeObject<GoogleSheetsResponse>(content);
 				foreach (var e in Item.values)
 				{
-					events.Add(new Event { 
+					events.Add(new Event
+					{
 						Title = e[0],
 						Venue = e[1],
 						VenueAdress = e[2],
 						Description = e[3],
 						StartDateAndTime = Convert.ToDateTime(e[4] + " " + e[5]),
 						EndDateAndTime = Convert.ToDateTime(e[6] + " " + e[7]),
-						EventImageSource = e[8]});
+						EventImageSource = e[8]
+					});
 				}
 				return events;
 			}
