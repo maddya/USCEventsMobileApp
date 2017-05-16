@@ -5,24 +5,11 @@ using Xamarin.Forms;
 
 namespace USCEvents
 {
-	public partial class CheckinPage : ContentPage
+	public partial class CheckInPage : ContentPage
 	{
-		public CheckinPage()
+		public CheckInPage()
 		{
 			InitializeComponent();
-			Dismiss.GestureRecognizers.Add (new TapGestureRecognizer {
-			    Command = new Command(() => OnDismiss()),
-			});
-			Dismiss_Label.GestureRecognizers.Add (new TapGestureRecognizer {
-			    Command = new Command(() => OnDismiss()),
-			});
 		}
-
-		private void OnDismiss()
-		{
-			Navigation.PopAsync();
-		}
-
-
 	}
 }
