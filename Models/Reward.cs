@@ -1,5 +1,5 @@
 ﻿using System;
-namespace USCEvents
+namespace USCEvents.Models
 {
 	public class Reward
 	{
