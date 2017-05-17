@@ -54,7 +54,7 @@
     <EmbeddedResource Include="View\RewardsDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CheckinPage.xaml">
+    <EmbeddedResource Include="View\CheckInPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MyRewardsPage.xaml">
@@ -102,8 +102,8 @@
       <DependentUpon>RewardsDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Grouping.cs" />
-    <Compile Include="View\CheckinPage.xaml.cs">
-      <DependentUpon>CheckinPage.xaml</DependentUpon>
+    <Compile Include="View\CheckInPage.xaml.cs">
+      <DependentUpon>CheckInPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MyRewardsPage.xaml.cs">
       <DependentUpon>MyRewardsPage.xaml</DependentUpon>
