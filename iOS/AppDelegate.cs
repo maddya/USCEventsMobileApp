@@ -40,6 +40,7 @@ namespace USCEvents.iOS
 
 		async void LocationRegionEntered(object sender, CLRegionEventArgs e)
 		{
+			//this function will be for when user gets in range of beacon
 			var regionCheckInPopup = await DisplayAlert("Show Region Entered", "Do you want to check in at this show to redeem points? " , "Yes", "Cancel");
 			if (regionCheckInPopup) //if user chooses to checkin....
 			{
