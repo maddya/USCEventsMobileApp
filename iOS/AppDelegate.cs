@@ -12,6 +12,7 @@ namespace USCEvents.iOS
 	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
 		private CLLocationManager _locationManager;
+		private CLBeaconRegion _region;
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
@@ -33,19 +34,23 @@ namespace USCEvents.iOS
 			if (e.Status == CLAuthorizationStatus.AuthorizedAlways)
 			{
 				//can't add region????
-				_region = new CLBeaconRegion("b530fb1226b586f8c23e2f12e9d84635", "USC show");
+				_region = new CLBeaconRegion(new NSUuid("B9407F30-F5F8-466E-AFF9-25556B57FE6D"), "USC show");
 				_locationManager.StartMonitoring(_region);
 			}
 		}
 
-		async void LocationRegionEntered(object sender, CLRegionEventArgs e)
+		void LocationRegionEntered(object sender, CLRegionEventArgs e)
 		{
 			//this function will be for when user gets in range of beacon
-			var regionCheckInPopup = await DisplayAlert("Show Region Entered", "Do you want to check in at this show to redeem points? " , "Yes", "Cancel");
-			if (regionCheckInPopup) //if user chooses to checkin....
-			{
-				Navigation.PushAsync(new CheckinPage()); //if user selects confirm, call onredeem
-			}
+
+			//var regionCheckInPopup = await DisplayAlert("Show Region Entered", "Do you want to check in at this show to redeem points? " , "Yes", "Cancel");
+			//if (regionCheckInPopup) //if user chooses to checkin....
+			//{
+			//	Navigation.PushAsync(new CheckinPage()); //if user selects confirm, call onredeem
+			//}
+			var notification = new UILocalNotification();
+			notification.AlertBody = "Entered Region";
+			UIApplication.SharedApplication.PresentLocalNotificationNow(notification);
 		}
 
 		void LocationRegionLeft(object sender, CLRegionEventArgs e)
