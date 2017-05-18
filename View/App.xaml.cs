@@ -1,14 +1,17 @@
-﻿using Xamarin.Forms;
+﻿using System.Diagnostics;
+using Xamarin.Forms;
 
 namespace USCEvents
 {
 	public partial class App : Application
 	{
+
 		public App()
 		{
 			InitializeComponent();
 
 			MainPage = new USCEventsPage();
+
 		}
 
 		protected override void OnStart()

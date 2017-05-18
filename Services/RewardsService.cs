@@ -12,8 +12,6 @@ namespace USCEvents.Services
 {
 	public class GoogleSheetsRewardsResponse
 	{
-		//public string range { get; set; }
-		//public string majorDimension { get; set; }
 		public List<List<string>> values { get; set; }
 	}
 
@@ -64,27 +62,6 @@ namespace USCEvents.Services
 							RewardsImage = r[5] + ".png"
 						};
 						point_values.Add(int.Parse(r[4]), new List<Reward> { rew });
-
-						//rewards.Add(new Reward
-						//{
-						//	Title = r[0],
-						//	Description = r[1],
-						//	ExpDateAndTime = r[2] + " " + r[3],
-						//	Points = int.Parse(r[4]),
-						//	//Fname = r[5],
-						//	//Lname = r[6],
-						//	Type = r[5],
-						//	RewardsImage = r[5]+".png"
-						//});
-						//if point value exists already
-						//if (point_values.ContainsKey(int.Parse(r[4])))
-						//  				{
-						//       			//add r to be associated with that value 
-
-						//   			}
-						//else 
-						//{
-						//	point_values.Add(int.Parse(r[4]),new List<Reward> (r)
 					}
 
 					}
