@@ -68,6 +68,15 @@
     <EmbeddedResource Include="View\FacebookPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CompleteAccountPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PrivacyPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TermsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +131,15 @@
     </Compile>
     <Compile Include="View\FacebookPage.xaml.cs">
       <DependentUpon>FacebookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CompleteAccountPage.xaml.cs">
+      <DependentUpon>CompleteAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrivacyPage.xaml.cs">
+      <DependentUpon>PrivacyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TermsPage.xaml.cs">
+      <DependentUpon>TermsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -6,13 +6,21 @@ namespace USCEvents
 	{
 
 		public static string accessToken;
+		public static bool loginComplete = false;
+		public static UserInfo me;
 
 		public App()
 		{
 			InitializeComponent();
 
-			//MainPage = new USCEventsPage();
-			MainPage = new NavigationPage(new LoginPage());
+			if (loginComplete)
+			{
+				MainPage = new USCEventsPage();
+			}
+			else
+			{
+				MainPage = new NavigationPage(new LoginPage());
+			}
 		}
 
 		protected override void OnStart()
