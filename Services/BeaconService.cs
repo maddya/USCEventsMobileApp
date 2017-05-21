@@ -14,7 +14,7 @@ namespace USCEvents
 		{
 
 			var status = await EstimoteManager.Instance.Initialize(); // optionally pass false to authorize foreground ranging only
-			if (status != BeaconInitStatus.Success)
+            if (status != BeaconInitStatus.Success)
 			{
 				//... You have a problem with permissions or bluetooth is unavailable on the device, use the enum to figure out what!
 				Debug.WriteLine("it didn't work");

@@ -30,7 +30,7 @@ namespace USCEvents.View
                     //start ranging for beacons
                     beacons = new BeaconService();
 					beacons.Initialize();
-					//InitializeComponent();
+					InitializeComponent();
 
 					UserAlerted = false;
 
