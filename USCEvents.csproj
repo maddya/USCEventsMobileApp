@@ -62,6 +62,9 @@
     <EmbeddedResource Include="View\RedeemConfirmationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CheckinLoadingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +113,10 @@
     <Compile Include="View\RedeemConfirmationPage.xaml.cs">
       <DependentUpon>RedeemConfirmationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CheckinLoadingPage.xaml.cs">
+      <DependentUpon>CheckinLoadingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\BeaconService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">

@@ -13,5 +13,6 @@ namespace USCEvents.Models
 		public string StartDateDisplayString { get; set; }
 		public string EndDateDisplayString { get; set; }
 		public string TimeDisplayString { get; set; }
+        public int Points { get; set; }
 	}
 }

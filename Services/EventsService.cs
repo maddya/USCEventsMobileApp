@@ -30,17 +30,18 @@ namespace USCEvents.Services
 			{
 				var content = await response.Content.ReadAsStringAsync();
 				Item = JsonConvert.DeserializeObject<GoogleSheetsResponse>(content);
-				foreach (var e in Item.values)
+                foreach (var e in Item.values)
 				{
-					events.Add(new Event
-					{
-						Title = e[0],
-						Venue = e[1],
-						VenueAdress = e[2],
-						Description = e[3],
-						StartDateAndTime = Convert.ToDateTime(e[4] + " " + e[5]),
-						EndDateAndTime = Convert.ToDateTime(e[6] + " " + e[7]),
-						EventImageSource = e[8]
+                    events.Add(new Event
+                    {
+                        Title = e[0],
+                        Venue = e[1],
+                        VenueAdress = e[2],
+                        Description = e[3],
+                        StartDateAndTime = Convert.ToDateTime(e[4] + " " + e[5]),
+                        EndDateAndTime = Convert.ToDateTime(e[6] + " " + e[7]),
+                        EventImageSource = e[8],
+                        Points = Convert.ToInt32(e[9])
 					});
 				}
 				return events;

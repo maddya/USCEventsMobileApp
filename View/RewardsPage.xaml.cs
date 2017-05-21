@@ -8,6 +8,7 @@ using USCEvents.Services;
 using Xamarin.Forms;
 using System.Linq;
 using System.Diagnostics;
+using USCEvents.View;
 
 namespace USCEvents
 {
@@ -54,7 +55,7 @@ namespace USCEvents
 		//Checkin selected --> check in page
 		private void OnCheckinClicked(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new CheckinPage());
+			Navigation.PushAsync(new CheckinLoadingPage());
 		}
 	}
 }
