@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using USCEvents.Models;
 using Xamarin.Forms;
 
 namespace USCEvents

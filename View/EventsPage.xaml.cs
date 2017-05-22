@@ -17,12 +17,12 @@ namespace USCEvents
 			InitializeComponent();
 			events = eventsService.GetEvents();
 			EventsView.ItemsSource = events;
-		}
 
-		private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-		{
-			var item = e.SelectedItem;
-			Navigation.PushAsync(new EventDetailsPage((Event) item));
+			EventsView.ItemTapped += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new EventDetailsPage(e.Item as Event));
+				((ListView)sender).SelectedItem = null;
+			};
 		}
 	}
 }
