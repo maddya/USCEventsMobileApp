@@ -16,8 +16,10 @@
 	<true/>
 	<key>MinimumOSVersion</key>
 	<string>10.3</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Event Check-in</string>
 	<key>NSLocationWhenInUseDescription</key>
-	<string>Need to Check Location in Range of Event</string>
+	<string>Event Check-in</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -43,9 +45,5 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Location Tracking for Event Check-in Verification</string>
-	<key>NSLocationWhenUseUsageDescription</key>
-	<string>This is why we want you to enable location</string>
 </dict>
 </plist>

@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Diagnostics;
+using Xamarin.Forms;
 
 namespace USCEvents
 {
@@ -6,7 +8,7 @@ namespace USCEvents
 	{
 		public USCEventsPage()
 		{
-			InitializeComponent();
+            InitializeComponent();
 		}
 	}
 }
