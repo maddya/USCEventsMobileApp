@@ -39,10 +39,27 @@ namespace USCEvents.Services
             return null;
         }
 
-        public async void AddReward(UserInfo user, Reward reward) {
+        //add a reward to the ID for a particular user (local user) on firebase
+        public async Task<String> AddReward(UserInfo user, Reward reward) {
             var item = await firebase
                 .Child("Rewards/" + user.Id)
                 .PostAsync(reward);
+            App.me.Points = App.me.Points - reward.Points; //set new points
+            return item.Key;
+            //need to push new points to firebase...
         }
+
+        //Will read the users rewards from firebase
+		public async Task<FirebaseObject<UserRewardItem>> ReadRewardData(string ID)
+		{
+			var items = await firebase
+				.Child("Rewards/" + ID)
+				.OnceAsync<UserRewardItem>();
+			foreach (var user in items)
+			{
+				return user;
+			}
+			return null;
+		}
 	}
 }

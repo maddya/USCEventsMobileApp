@@ -21,6 +21,7 @@ namespace USCEvents
 			rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
 			MyRewardsView.IsGroupingEnabled = true;
 			MyRewardsView.ItemsSource = rewards.Values;
+            var myrew = f.ReadRewardData(App.me.Id);
 		}
 
 		//Select reward --> details page of that reward

@@ -59,7 +59,7 @@ namespace USCEvents
 		private async void OnRedeemConfirmed(Reward r)
 		{
             FirebaseService f = new FirebaseService();
-            f.AddReward(App.me, r);
+            await f.AddReward(App.me, r);
             await Navigation.PushAsync(new RedeemConfirmationPage((Reward)r));
 			//need to also send redemption and put them on list
 		}
