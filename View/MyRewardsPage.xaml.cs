@@ -11,7 +11,6 @@ namespace USCEvents
 		{
 			FirebaseService f = new FirebaseService();
 			InitializeComponent();
-			f.PostData();
 		}
 	}
 }

@@ -59,15 +59,11 @@ namespace USCEvents
             var dbQuery = await f.ReadExistingUserData(App.me.Id);
             if (dbQuery == null)
             {
-                User user = new User()
-                {
-                    Name = App.me.Name,
-                    FacebookID = App.me.Id,
-                    Points = 0
-                };
-                f.AddNewUser(user);
+                App.me.Points = 0;
+                await f.AddNewUser(App.me);
+            } else {
+                App.me = dbQuery.Object;
             }
-            var x = 5;
         }	
     }
 }

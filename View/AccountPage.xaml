@@ -47,7 +47,7 @@
 				<TableSection Title="Account Level: BLANK">
 					<ViewCell>
 						<StackLayout Orientation="Horizontal" Padding="20">
-							<Label Text="150 points" FontSize="Large"/>
+							<Label x:Name="points" FontSize="Large"/>
 						</StackLayout>
 					</ViewCell>
 					<ViewCell>

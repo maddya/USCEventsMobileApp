@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using USCEvents.Models;
 
 namespace USCEvents
 {
@@ -12,6 +14,7 @@ namespace USCEvents
 		[JsonProperty("last_name")]
 		public string LastName { get; set; }
 		public Picture Picture { get; set; }
+        public int Points { get; set; }
 	}
 
 	public class Picture

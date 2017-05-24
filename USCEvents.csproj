@@ -144,7 +144,6 @@
     </Compile>
     <Compile Include="Services\FirebaseService.cs" />
     <Compile Include="Models\UserEventUpgrade.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserRewardItem.cs" />
   </ItemGroup>
   <ItemGroup>

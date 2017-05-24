@@ -7,8 +7,6 @@ namespace USCEvents.Models
 		public string Description { get; set; }
 		public string ExpDateAndTime { get; set; }
 		public int Points { get; set; }
-		//public string Fname { get; set; }
-		//public string Lname { get; set; }
 		public string Type { get; set; }
 		public string RewardsImage { get; set; }
 	}
