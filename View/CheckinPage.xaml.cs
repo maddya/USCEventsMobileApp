@@ -17,7 +17,7 @@ namespace USCEvents
 			    Command = new Command(() => OnDismiss()),
 			});
 
-            checkedinlabel.Text = "You successfully checked into" + e.Title + "for " + e.Points + "points! The points have been added to your accout.";
+            checkedinlabel.Text = "You successfully checked into " + e.Title + " for " + e.Points + " points!";
 		}
 
 		private void OnDismiss()

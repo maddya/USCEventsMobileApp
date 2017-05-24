@@ -6,6 +6,7 @@
 				<Image Source="CheckinDetail.png" HeightRequest="120"></Image>
 				<Label HorizontalTextAlignment="Center" Font="24,Bold" Text="You got 50 points!" Margin="0,18,0,18"/>
 				<Label x:Name="checkedinlabel" HorizontalTextAlignment="Center"/>
+                <Label Text= " The points have been added to your accout."/>
 				<Label HorizontalTextAlignment="Center" Text="You now have ___ points"/>
 			</StackLayout>
 			<RelativeLayout VerticalOptions="End" >

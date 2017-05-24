@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using USCEvents.Models;
 using USCEvents.Services;
@@ -23,7 +23,7 @@ namespace USCEvents.View
             //GC.KeepAlive(EstimoteManager.Instance);
             InitializeComponent();
             eventsService = new EventsService();
-            events = eventsService.GetDummyEvents();
+            events = eventsService.GetEvents();
             DateTime time = DateTime.Now;
             Event currentEvent = null;
 			foreach (Event e in events)
