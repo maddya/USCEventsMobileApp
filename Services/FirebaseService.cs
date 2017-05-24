@@ -32,6 +32,13 @@ namespace USCEvents.Services
         }
 
 
+		public async void AddNewUser(Models.User user)
+		{
+			var item = await firebase
+				.Child("Users")
+				.PostAsync(user, false);
+		}
+
         // this is the method I'm currently using in MyRewardsPage.xaml.cs
         // the refactored methods are above and what we're eventually gonna use, I just haven't implemented yet
         public async void PostData()
