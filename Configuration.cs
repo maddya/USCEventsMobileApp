@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 namespace USCEvents
 {
 	public static class Configuration

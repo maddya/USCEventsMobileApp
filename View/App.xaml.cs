@@ -6,12 +6,22 @@ namespace USCEvents
 	public partial class App : Application
 	{
 
+		public static string accessToken;
+		public static bool loginComplete = false;
+		public static UserInfo me;
+
 		public App()
 		{
 			InitializeComponent();
 
-			MainPage = new USCEventsPage();
-
+			if (loginComplete)
+			{
+				MainPage = new USCEventsPage();
+			}
+			else
+			{
+				MainPage = new NavigationPage(new LoginPage());
+			}
 		}
 
 		protected override void OnStart()

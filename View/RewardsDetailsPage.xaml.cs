@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using USCEvents.Models;
+using USCEvents.Services;
 using Xamarin.Forms;
 
 
@@ -29,6 +30,7 @@ namespace USCEvents
 			    Command = new Command(() => OnRedeem(r)),
 			});
 		}
+
 		async void OnRedeem(Reward r)
 		{
 			//send true if redeem, false if cancel

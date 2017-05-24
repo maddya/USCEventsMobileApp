@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using USCEvents.Models;
 using USCEvents.Services;
 using USCEvents.View;
 using Xamarin.Forms;
@@ -15,6 +16,7 @@ namespace USCEvents
 
 		public MyRewardsPage()
 		{
+			FirebaseService f = new FirebaseService();
 			InitializeComponent();
 			rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
 			MyRewardsView.IsGroupingEnabled = true;
