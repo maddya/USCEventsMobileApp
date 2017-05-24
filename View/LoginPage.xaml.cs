@@ -1,10 +1,12 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using USCEvents.Models;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using USCEvents.Services;
+using System.Diagnostics;
 
 namespace USCEvents
 {
@@ -46,7 +48,26 @@ namespace USCEvents
 			//App.myName = facebookProfile.Name;
 			App.me = facebookProfile;
 
+            HandleUser();
+
 			return facebookProfile;
 		}
-	}
+
+        private async void HandleUser()
+        {
+			FirebaseService f = new FirebaseService();
+            var dbQuery = await f.ReadExistingUserData(App.me.Id);
+            if (dbQuery == null)
+            {
+                User user = new User()
+                {
+                    Name = App.me.Name,
+                    FacebookID = App.me.Id,
+                    Points = 0
+                };
+                f.AddNewUser(user);
+            }
+            var x = 5;
+        }	
+    }
 }

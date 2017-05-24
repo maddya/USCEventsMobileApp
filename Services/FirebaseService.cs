@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Firebase.Xamarin.Auth;
 using Firebase.Xamarin.Database;
 using USCEvents.Models;
@@ -21,7 +23,7 @@ namespace USCEvents.Services
 		
         public async void PostUserEventUpgrade(UserEventUpgrade eventUpgrade) {
 			var item = await firebase
-                .Child(eventUpgrade.EventName + " " + eventUpgrade.EventYear)
+                .Child("Events/" + eventUpgrade.EventName + " " + eventUpgrade.EventYear)
                 .PostAsync(eventUpgrade, false);
         }
 
@@ -35,9 +37,19 @@ namespace USCEvents.Services
 		public async void AddNewUser(Models.User user)
 		{
 			var item = await firebase
-				.Child("Users")
+                .Child("Users/"+user.FacebookID)
 				.PostAsync(user, false);
 		}
+
+        public async Task<Models.User> ReadExistingUserData(string ID) {
+			var items = await firebase
+			  .Child("Users/"+ID)
+			  .OnceAsync<Models.User>();
+            foreach (var user in items) {
+                return user.Object;
+            }
+            return null;
+        }
 
         // this is the method I'm currently using in MyRewardsPage.xaml.cs
         // the refactored methods are above and what we're eventually gonna use, I just haven't implemented yet
