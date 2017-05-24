@@ -31,21 +31,36 @@ namespace USCEvents
 			});
 		}
 
+        private bool canAfford(Reward r) {
+            return App.me.Points >= r.Points;
+        }
+
 		async void OnRedeem(Reward r)
 		{
-			//send true if redeem, false if cancel
-			var redeem_answer = await DisplayAlert("Alert", "Do you want to redeem " +r.Title+ " for " + r.Points+" points?", "Redeem", "Cancel");
-			if (redeem_answer)
-			{
-				OnRedeemConfirmed(r); //if user selects confirm, call onredeem
+            var afford = canAfford(r);
+            //send true if redeem, false if cancel
+            if (afford)
+            {
+			    var redeem_answer = await DisplayAlert("Alert", "Do you want to purchase " +r.Title+ " for " + r.Points+" points?", "Purchase", "Cancel");
+                if (redeem_answer)
+                {
+                    OnRedeemConfirmed(r);
+                }
+            }
+            else 
+            {
+                var alert = await DisplayAlert("Insufficient Points", "You do not have enough points to purchase this reward", null, "OK");
+				 //if user selects confirm, call onredeem
 			}
 				
 		}
 
 		//confirm redeeming points - need to send points and reward redeemed
-		private void OnRedeemConfirmed(Reward r)
+		private async void OnRedeemConfirmed(Reward r)
 		{
-			Navigation.PushAsync(new RedeemConfirmationPage((Reward)r));
+            FirebaseService f = new FirebaseService();
+            f.AddReward(App.me, r);
+            await Navigation.PushAsync(new RedeemConfirmationPage((Reward)r));
 			//need to also send redemption and put them on list
 		}
 	}

@@ -55,12 +55,12 @@ namespace USCEvents
 		//Checkin selected --> check in page
 		private void OnCheckinClicked(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new CheckInPage());
+			Navigation.PushAsync(new CheckinLoadingPage());
 		}
 
 		public async void CheckIn_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new CheckInPage());
+			await Navigation.PushAsync(new CheckinLoadingPage());
 		}
 
 		public async void MyRewards_Clicked(object sender, EventArgs e)
