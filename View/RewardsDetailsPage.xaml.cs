@@ -60,8 +60,12 @@ namespace USCEvents
 		{
             FirebaseService f = new FirebaseService();
             await f.AddReward(App.me, r);
+            App.me.myRewards.Add(r);
             await Navigation.PushAsync(new RedeemConfirmationPage((Reward)r));
-			//need to also send redemption and put them on list
+            App.me.Points = App.me.Points - r.Points;
+            await f.UpdateUser();
+            //need to also send redemption and put them on list
+
 		}
 	}
 }

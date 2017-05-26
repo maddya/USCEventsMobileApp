@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MyRewardsPage" Title="MyRewards">
 	<ContentPage.Content>
-		<ListView x:Name="MyRewardsView" RowHeight="96" SeparatorVisibility="None" Header="My Rewards">
+		<ListView x:Name="MyRewardsView" RowHeight="96" SeparatorVisibility="None" Header="My Rewards" ItemSelected="OnMyRewardSelected">
                 <ListView.HeaderTemplate >
                   <DataTemplate>
                     <StackLayout Orientation="Horizontal" HeightRequest="58">
@@ -11,18 +11,21 @@
                     </StackLayout>
                   </DataTemplate>
                 </ListView.HeaderTemplate>
-                <ListView.GroupHeaderTemplate>
+                <!--<ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Label Text="{Binding Points}"/>
                         </ViewCell>
                     </DataTemplate>
-                </ListView.GroupHeaderTemplate>
+                </ListView.GroupHeaderTemplate>-->
                 <ListView.ItemTemplate>
                    <DataTemplate>
+<!--                        <ViewCell>
+                        <Label Text="{Binding Title}"/>
+                        </ViewCell>-->
                         <!--<ImageCell ImageSource ="Checkin.png"></ImageCell>-->
                         <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
-                   </DataTemplate>
+                    </DataTemplate>
                  </ListView.ItemTemplate>
             </ListView>
 	</ContentPage.Content>

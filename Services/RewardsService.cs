@@ -36,16 +36,17 @@ namespace USCEvents.Services
 					List<Reward> value;
 					if (point_values.TryGetValue(int.Parse(r[4]), out value))
 					{
-						value.Add(new Reward
-						{
-							Title = r[0],
-							Description = r[1],
-							ExpDateAndTime = r[2] + " " + r[3],
-							Points = int.Parse(r[4]),
-							//Fname = r[5],
-							//Lname = r[6],
-							Type = r[5],
-							RewardsImage = r[5] + ".png"
+                        value.Add(new Reward
+                        {
+                            Title = r[0],
+                            Description = r[1],
+                            ExpDateAndTime = r[2] + " " + r[3],
+                            Points = int.Parse(r[4]),
+                            //Fname = r[5],
+                            //Lname = r[6],
+                            Type = r[5],
+                            RewardsImage = r[5] + ".png",
+                            isRedeemed = false
 						});
 					}
 					else //point value not yet in dictionary

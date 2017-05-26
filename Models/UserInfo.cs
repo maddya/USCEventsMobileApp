@@ -15,6 +15,8 @@ namespace USCEvents
 		public string LastName { get; set; }
 		public Picture Picture { get; set; }
         public int Points { get; set; }
+        public List<Reward> myRewards = new List<Reward>();
+        //public string FacebookID { get; set;  }
 	}
 
 	public class Picture

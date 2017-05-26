@@ -9,5 +9,6 @@ namespace USCEvents.Models
 		public int Points { get; set; }
 		public string Type { get; set; }
 		public string RewardsImage { get; set; }
+        public bool isRedeemed { get; set; }
 	}
 }

@@ -29,6 +29,17 @@ namespace USCEvents.Services
             return item.Key;
 		}
 
+        public async Task<string> UpdateUser()
+        {
+            await firebase
+                .Child("Users/" + App.me.Id)
+                .DeleteAsync();
+            var item = await firebase
+                .Child("Users/" + App.me.Id)
+                .PostAsync(App.me, false);
+            return item.Key;
+        }
+
         public async Task<FirebaseObject<UserInfo>> ReadExistingUserData(string ID) {
             var items = await firebase
                 .Child("Users/"+ID)
@@ -50,16 +61,35 @@ namespace USCEvents.Services
         }
 
         //Will read the users rewards from firebase
-		public async Task<FirebaseObject<UserRewardItem>> ReadRewardData(string ID)
+		public async Task<FirebaseObject<Reward>> ReadRewardData(string ID)
 		{
+            //App.me.myRewards = new List<Reward>();
 			var items = await firebase
-				.Child("Rewards/" + ID)
-				.OnceAsync<UserRewardItem>();
+				.Child("Rewards/"+ID)
+				.OnceAsync<Reward>();
+            App.me.myRewards = new List<Reward>();
 			foreach (var user in items)
 			{
-				return user;
+                
+                var rew = user.Object;
+				App.me.myRewards.Add(rew);
+                //return user;
 			}
 			return null;
+		}
+
+		public async Task<FirebaseObject<Reward>> UpdateRewards()
+		{
+            //clear current rewards
+			await firebase
+				.Child("Rewards/" + App.me.Id)
+				.DeleteAsync();
+            foreach (Reward r in App.me.myRewards){
+				var item = await firebase
+				.Child("Rewards/" + App.me.Id)
+				.PostAsync(r, false);
+            }
+            return null;
 		}
 	}
 }

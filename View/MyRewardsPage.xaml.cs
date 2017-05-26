@@ -18,17 +18,21 @@ namespace USCEvents
 		{
 			FirebaseService f = new FirebaseService();
 			InitializeComponent();
-			rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
-			MyRewardsView.IsGroupingEnabled = true;
-			MyRewardsView.ItemsSource = rewards.Values;
-            var myrew = f.ReadRewardData(App.me.Id);
+			//rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
+			//MyRewardsView.IsGroupingEnabled = true;
+            var myrew = App.me.myRewards;
+            MyRewardsView.ItemsSource = myrew;
+
+
 		}
 
+
+
 		//Select reward --> details page of that reward
-		private void OnRewardSelected(object sender, SelectedItemChangedEventArgs e)
+		private void OnMyRewardSelected(object sender, SelectedItemChangedEventArgs e)
 		{
 			var item = e.SelectedItem;
-			Navigation.PushAsync(new RewardsDetailsPage((Reward)item));
+			Navigation.PushAsync(new MyRewardsDetailsPage((Reward)item));
 		}
 
 		//my rewards selected --> my rewards page

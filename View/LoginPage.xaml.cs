@@ -47,7 +47,7 @@ namespace USCEvents
 
 			//App.myName = facebookProfile.Name;
 			App.me = facebookProfile;
-
+            var m = App.me;
             HandleUser();
 
 			return facebookProfile;
@@ -64,6 +64,7 @@ namespace USCEvents
             } else {
                 App.me = dbQuery.Object;
             }
+            await f.ReadRewardData(App.me.Id);
         }	
     }
 }
