@@ -40,10 +40,16 @@ namespace USCEvents
             //if user selects confirm, call onredeem
             if (confirm) {
                 //remove locally
+
                 App.me.myRewards.Remove(r);
-				//remove on firebase
+                r.isRedeemed = true;
+                //var m = App.me;
+                App.me.myRewards.Add(r);
+
 				await f.UpdateRewards();
-                await Navigation.PopAsync();
+
+				//await Navigation.PopAsync();
+
                 await Navigation.PushAsync(new MyRewardsPage());
             }
 

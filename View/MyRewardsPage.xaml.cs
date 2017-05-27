@@ -7,26 +7,52 @@ using Xamarin.Forms;
 
 namespace USCEvents
 {
-	public partial class MyRewardsPage : ContentPage
-	{
+    public partial class MyRewardsPage : ContentPage
+    {
+        private RewardsService rewardsService = new RewardsService();
+        private List<Reward> myRewards = App.me.myRewards;
 
-		private Dictionary<int, List<Reward>> rewards { get; set; }
-		//private ObservableCollection<Grouping<Reward>> RewardsGrouped { get; set; }
-		private RewardsService rewardsService = new RewardsService();
+        private List<Reward> available { get; set;}
+        private List<Reward> redeemed { get; set; }
 
 		public MyRewardsPage()
 		{
+            InitializeComponent();
 			FirebaseService f = new FirebaseService();
-			InitializeComponent();
-			//rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
-			//MyRewardsView.IsGroupingEnabled = true;
-            var myrew = App.me.myRewards;
-            MyRewardsView.ItemsSource = myrew;
 
+            redeemed = getRedeemed();
+            available = getAvailable();
+
+            MyAvailable.ItemsSource = available;
+            MyRedeemed.ItemsSource = redeemed;
 
 		}
 
+        private List<Reward> getRedeemed()
+        {
+            List<Reward> redeem = new List<Reward>();
+            foreach (Reward r in myRewards)
+            {
+                if (r.isRedeemed)
+                {
+                    redeem.Add(r);
+                }
+            }
+            return redeem;
+        }
 
+		private List<Reward> getAvailable()
+		{
+			List<Reward> avail = new List<Reward>();
+			foreach (Reward r in myRewards)
+			{
+				if (!r.isRedeemed)
+				{
+					avail.Add(r);
+				}
+			}
+			return avail;
+		}
 
 		//Select reward --> details page of that reward
 		private void OnMyRewardSelected(object sender, SelectedItemChangedEventArgs e)

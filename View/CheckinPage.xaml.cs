@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using USCEvents.Models;
 using Xamarin.Forms;
 
 namespace USCEvents
 {
 	public partial class CheckInPage : ContentPage
 	{
-		public CheckInPage()
+		public CheckInPage(Event e)
 		{
 			InitializeComponent();
 			Dismiss.GestureRecognizers.Add(new TapGestureRecognizer

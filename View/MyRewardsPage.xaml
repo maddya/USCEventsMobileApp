@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MyRewardsPage" Title="MyRewards">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MyRewardsPage" Title="My Rewards">
 	<ContentPage.Content>
-		<ListView x:Name="MyRewardsView" RowHeight="96" SeparatorVisibility="None" Header="My Rewards" ItemSelected="OnMyRewardSelected">
-                <ListView.HeaderTemplate >
-                  <DataTemplate>
-                    <StackLayout Orientation="Horizontal" HeightRequest="58">
-                        <Button HorizontalOptions="Start" Clicked="OnCheckinClicked" Margin="0,12,0,12" x:Name="CheckinButton" Image="Checkin.png" Text="Check In" FontSize="16" TextColor="Black"/>
-                        <!--<Image x:Name="C_in" Source="Checkin.png" WidthRequest="34" Margin="12"/><Label x:Name="Ck" Text="Check-in" VerticalTextAlignment="Center"/>-->
-                        <Button HorizontalOptions="Center" Clicked="OnMyRewardsClicked" Margin="0,12,0,12" Image="MyRewards.png" Text="My Rewards" FontSize="16" TextColor="Black"/>
-                    </StackLayout>
-                  </DataTemplate>
-                </ListView.HeaderTemplate>
-                <!--<ListView.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding Points}"/>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.GroupHeaderTemplate>-->
-                <ListView.ItemTemplate>
-                   <DataTemplate>
-<!--                        <ViewCell>
-                        <Label Text="{Binding Title}"/>
-                        </ViewCell>-->
-                        <!--<ImageCell ImageSource ="Checkin.png"></ImageCell>-->
+        <StackLayout>
+            <Label Text="Available to Redeem" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="40"/>
+          
+             <ListView x:Name="MyAvailable" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnMyRewardSelected">
+              <ListView.ItemTemplate>
+                <DataTemplate>
                         <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
                     </DataTemplate>
-                 </ListView.ItemTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            <Label Text="Redeemed" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="40"/>
+         
+
+             <ListView x:Name="MyRedeemed" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnMyRewardSelected">-->
+             <ListView.ItemTemplate>
+                <DataTemplate>
+                        <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
