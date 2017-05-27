@@ -17,8 +17,9 @@ namespace USCEvents
             var m = App.me;
 			name.Text = App.me.Name;
 			//profileImage.Source = App.me.Picture.Data.Url;
-			id.Text = App.me.Id;
+			//id.Text = App.me.Id;
             points.Text = App.me.Points + " points";
+            profilePic.Source = App.me.Picture.Data.Url;
 		}
 	}
 }
