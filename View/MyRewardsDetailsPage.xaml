@@ -4,7 +4,7 @@
         <ScrollView>
             <StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="#f6f6f6">
                     <StackLayout Spacing="18" Orientation="Vertical" HeightRequest="156" BackgroundColor="White">
-                        <Image x:Name="image" Aspect="AspectFit" HorizontalOptions="Center" HeightRequest="120"></Image>
+                        <Image x:Name="image" Aspect="AspectFit" HorizontalOptions="Center" HeightRequest="120" Margin="20,20,20,29"></Image>
                     </StackLayout>
                 <RelativeLayout>
                     <BoxView x:Name="confirm_box" Color="#c900c6" HeightRequest="65"
