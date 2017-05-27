@@ -2,18 +2,71 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	x:Class="USCEvents.LoginPage"
-	BackgroundImage="background.jpg">
+	Title="LOGIN">
 	<ContentPage.Content>
+		<StackLayout Spacing="0" Orientation="Vertical" BackgroundColor="White">
+			<Image Source="background.png" Aspect="AspectFill" HorizontalOptions="Center" HeightRequest="540"></Image>
+			<RelativeLayout>
+				<Label Text="LOGIN USING" TextColor="White" FontSize="20"/>
+				<BoxView x:Name="facebook_box" Color="#3a589d" HeightRequest="65"
+        			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+				<Label x:Name="facebook" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+					RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+					RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+			</RelativeLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
 
-		<TableView Intent="Menu">
+
+
+		<!--<TableView Intent="Menu">
 		    <TableRoot>
 		        <TableSection>
 		        	<ImageCell ImageSource="USCLogo.jpg"/>
-					<TextCell Text="CONTINUE USING"/> <!--TextColor="White"-->
+					<TextCell Text="CONTINUE USING"/> TextColor="White"
                     <TextCell Text="FACEBOOK" Tapped="Login_Clicked"/>
 		        </TableSection>
 		    </TableRoot>
 		</TableView>
-	
-	</ContentPage.Content>
-</ContentPage>
+
+						<RelativeLayout>
+							<BoxView x:Name="facebook_box" Color="#3a589d" HeightRequest="65"
+		            			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+							<Label x:Name="facebook" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+								RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+								RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+								RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+						</RelativeLayout>
+
+		<ScrollView>
+			<StackLayout Orientation="Vertical" Spacing="0" BackgroundColor="#f6f6f6">
+					<StackLayout Spacing="0" Orientation="Vertical" BackgroundColor="White">
+						<Image Source="background.png" Aspect="AspectFill" HorizontalOptions="Center" HeightRequest="540"></Image>
+						<RelativeLayout>
+							<BoxView x:Name="facebook_box" Color="#3a589d" HeightRequest="65"
+		            			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+							<Label x:Name="facebook" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+								RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+								RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+								RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+						</RelativeLayout>
+					</StackLayout>
+			</StackLayout>
+		</ScrollView>
+
+
+		<StackLayout Spacing="0" Orientation="Vertical" BackgroundColor="White">
+			<Image Source="background.png" Aspect="AspectFill" HorizontalOptions="Center" HeightRequest="540"></Image>
+			<RelativeLayout>
+				<Label Text="LOGIN USING" TextColor="White" FontSize="20"/>
+				<BoxView x:Name="facebook_box" Color="#3a589d" HeightRequest="65"
+        			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+				<Label x:Name="facebook" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+					RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+					RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+					RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+			</RelativeLayout>
+		</StackLayout>
+		-->

@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.CompleteAccountPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="USCEvents.CompleteAccountPage">
 	<ContentPage.Content>
-		<TableView Intent="Menu">
-		    <TableRoot>
-		        <TableSection>
-		        	<ImageCell ImageSource="USCLogo.jpg"/>
-					<TextCell Text="COMPLETE ACCOUNT"/>
-                    <TextCell Text="In order to finish creating your account, please accept the Terms and Conditions"/>
-					<TextCell Text="VIEW TERMS AND CONDITIONS" Tapped="Terms_Clicked"/>
-					<TextCell Text="VIEW PRIVACY POLICY" Tapped="Privacy_Clicked"/>
-					<TextCell Text="I ACCEPT" Tapped="Accept_Clicked"/>
-		        </TableSection>
-		    </TableRoot>
-		</TableView>
+		<StackLayout>
+			<StackLayout VerticalOptions="Start" Spacing="30">
+				<Image Source="USCLogo.jpg" Aspect="AspectFill" HorizontalOptions="Center" HeightRequest="83" WidthRequest="267" Margin="20"></Image>
+				<Label Text="COMPLETE ACCOUNT" TextColor="Black" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+				<Label Text="In order to finish creating your account, please accept the Privacy Policy and Terms &amp; Conditions" TextColor="Black" 
+					FontSize="18" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" Margin="50"/>
+			</StackLayout>
+
+			<StackLayout VerticalOptions="End" Spacing="2">
+				<RelativeLayout>
+					<BoxView x:Name="terms_box" Color="#6F6F6F" HeightRequest="65"
+	        			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+					<Label x:Name="terms" FontSize="18" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+				</RelativeLayout>
+				<RelativeLayout>
+					<BoxView x:Name="privacy_box" Color="#6F6F6F" HeightRequest="65"
+	        			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+					<Label x:Name="privacy" FontSize="18" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+				</RelativeLayout>
+				<RelativeLayout>
+					<BoxView x:Name="accept_box" Color="#c900c6" HeightRequest="75"
+	        			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+					<Label x:Name="accept" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+				</RelativeLayout>
+			</StackLayout>
+		</StackLayout>
+
 	</ContentPage.Content>
 </ContentPage>

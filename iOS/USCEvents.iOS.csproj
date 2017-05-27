@@ -150,9 +150,10 @@
     <BundleResource Include="Resources\Checkin.png" />
     <BundleResource Include="Resources\MyRewards.png" />
     <BundleResource Include="Resources\CheckinDetail.png" />
-    <BundleResource Include="Resources\background.jpg" />
     <BundleResource Include="Resources\USCWhite.svg" />
     <BundleResource Include="Resources\USCLogo.jpg" />
+    <BundleResource Include="Resources\background.png" />
+    <BundleResource Include="Resources\background-unedited.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

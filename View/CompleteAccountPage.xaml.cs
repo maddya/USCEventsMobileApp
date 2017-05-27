@@ -13,22 +13,46 @@ namespace USCEvents
 		public CompleteAccountPage()
 		{
 			InitializeComponent();
+			terms.Text = "VIEW TERMS & CONDITIONS";
+			privacy.Text = "VIEW PRIVACY POLICY";
+			accept.Text = "I ACCEPT";
 
-			//name.Text = facebookProfile.Name;
-			//profileImage.Source = facebookProfile.Picture.Data.Url;
+			// Make terms clickable
+			terms_box.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command(() => Terms_Clicked()),
+			});
+			terms.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command(() => Terms_Clicked()),
+			});
+
+			// Make privacy clickable
+			privacy_box.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command(() => Privacy_Clicked()),
+			});
+			privacy.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command(() => Privacy_Clicked()),
+			});
+
+			// Make accept clickable
+			accept_box.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command(() => Accept_Clicked()),
+			});
+			accept.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command(() => Accept_Clicked()),
+			});
 		}
 
-		async void Terms_Clicked(object sender, System.EventArgs e)
+		async void Terms_Clicked()
 		{
 			await Navigation.PushAsync(new TermsPage());
 		}
 
-		async void Privacy_Clicked(object sender, System.EventArgs e)
+		async void Privacy_Clicked()
 		{
 			await Navigation.PushAsync(new PrivacyPage());
 		}
 
-		async void Accept_Clicked(object sender, System.EventArgs e)
+		async void Accept_Clicked()
 		{
 			//MainPage = new USCEventsPage();
 			App.loginComplete = true;

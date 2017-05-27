@@ -15,9 +15,19 @@ namespace USCEvents
 		public LoginPage()
 		{
 			InitializeComponent();
+
+			facebook.Text = "FACEBOOK";
+
+			// Make FACEBOOK clickable
+			facebook_box.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command(() => Login_Clicked()),
+			});
+			facebook.GestureRecognizers.Add (new TapGestureRecognizer {
+				Command = new Command(() => Login_Clicked()),
+			});
 		}
 
-		async void Login_Clicked(object sender, System.EventArgs e)
+		async void Login_Clicked()
 		{
 			MessagingCenter.Subscribe<FacebookPage, string>(this, FacebookPage.LOGIN_COMPLETE, HandleAction);
 
@@ -45,7 +55,6 @@ namespace USCEvents
 
 			var facebookProfile = JsonConvert.DeserializeObject<UserInfo>(userJson);
 
-			//App.myName = facebookProfile.Name;
 			App.me = facebookProfile;
 
             HandleUser();
@@ -67,7 +76,6 @@ namespace USCEvents
                 };
                 f.AddNewUser(user);
             }
-            var x = 5;
         }	
     }
 }

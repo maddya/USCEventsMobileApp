@@ -1,13 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.TermsPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="USCEvents.TermsPage"
+	Title="Terms &amp; Conditions">
 	<ContentPage.Content>
-		<TableView Intent="Menu">
-		    <TableRoot>
-		        <TableSection>
-		        	<ImageCell ImageSource="USCLogo.jpg"/>
-					<TextCell Text="TERMS"/>
-		        </TableSection>
-		    </TableRoot>
-		</TableView>
+		<ScrollView>
+			<StackLayout VerticalOptions="Start">
+				<StackLayout Spacing="2">
+					<Label Text="Please read these Terms and Conditions carefully before using the USC Events mobile application (Service) operated by USC Events." 
+						TextColor="Black" FontSize="12" LineBreakMode="WordWrap" Margin="5"/>
+					<Label Text="Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service." 
+						TextColor="Black" FontSize="12" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Margin="5"/>
+					<Label Text="By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service." 
+						TextColor="Black" FontSize="12" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Margin="5"/>
+				</StackLayout>
+
+				<StackLayout Spacing="2">
+					<Label Text="Rewards" TextColor="Black" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start"/>
+					<Label Text="If you wish to obtain any physical or digital reward made available through the Service, you may be asked to supply certain information relevant to your reward redemption including, without limitation, your profile information and confirmation of your prize. Reward redemption occurs 100% at the sole discretion of USC Events. Rewards have zero cash or currency value." 
+						TextColor="Black" FontSize="12" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Margin="5"/>
+				</StackLayout>
+
+				<StackLayout Spacing="2">
+					<Label Text="Content" TextColor="Black" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start"/>
+					<Label Text="Our Service allows you to view upcoming events and view available rewards. USC Events shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on the app content and information." 
+						TextColor="Black" FontSize="12" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Margin="5"/>
+				</StackLayout>
+
+				<StackLayout Spacing="2">
+					<Label Text="Links To Other Web Sites" TextColor="Black" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start"/>
+					<Label Text="Our Service may contain links to third-party web sites or services that are not owned or controlled by USC Events." 
+						TextColor="Black" FontSize="12" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Margin="5"/>
+					<Label Text="USC Events has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that USC Events shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services." 
+						TextColor="Black" FontSize="12" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Margin="5"/>
+				</StackLayout>
+
+				<StackLayout Spacing="2">
+					<Label Text="Changes" TextColor="Black" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start"/>
+					<Label Text="We reserve the right, at our sole discretion, to modify or replace these Terms at any time. What constitutes a material change will be determined at our sole discretion." 
+						TextColor="Black" FontSize="12" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Margin="5"/>
+				</StackLayout>
+
+				<StackLayout Spacing="2">
+					<Label Text="Contact Us" TextColor="Black" FontAttributes="Bold" FontSize="18" HorizontalOptions="Start"/>
+					<Label Text="If you have any questions about these Terms, please contact us." 
+						TextColor="Black" FontSize="12" HorizontalTextAlignment="Start" LineBreakMode="WordWrap" Margin="5"/>
+				</StackLayout>
+				
+				<Image Source="USCLogo.jpg" Aspect="AspectFill" HorizontalOptions="Center" HeightRequest="83" WidthRequest="267" Margin="20"></Image>
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
