@@ -28,14 +28,10 @@ namespace USCEvents
 		{
 			InitializeComponent();
 			rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
-			Debug.WriteLine(rewards);
+			
 			RewardsView.IsGroupingEnabled = true;
 			RewardsView.ItemsSource = rewards.Values;
-			//RewardsView.GroupHeaderTemplate = rewards.Keys;
-			//RewardsView.GroupDisplayBinding = rewards.Key;
-			//RewardsView.GroupShortNameBinding = rewards.Key;
-			//CheckinButton.Clicked += OnCheckinClicked;
-			//My_rew.Clicked += OnMyRewardsClicked;
+
 		}
 
 		//Select reward --> details page of that reward
