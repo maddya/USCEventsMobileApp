@@ -16,14 +16,14 @@
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=30}"/>
 					<Label x:Name="date" FontAttributes="Bold" FontSize="18" TextColor="White" HorizontalTextAlignment="Start"
-						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=56}" 
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=60}" 
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=30}"/>
 					<Label x:Name="time" FontAttributes="Bold" FontSize="18" TextColor="White" HorizontalTextAlignment="Start"
-						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=68}" 
+						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=78}" 
 						RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
 						RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=30}"/>
-					<BoxView Color="#f6f6f6" HeightRequest="120"
+					<BoxView Color="#f6f6f6" HeightRequest="14  0"
 						RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=108}"
             			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
 					<Label x:Name="description" FontSize="13" TextColor="#484848" HorizontalTextAlignment="Start" LineBreakMode="WordWrap"

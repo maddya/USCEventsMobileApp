@@ -64,14 +64,13 @@ namespace USCEvents.Services
 						point_values.Add(int.Parse(r[4]), new List<Reward> { rew });
 					}
 
-					}
-
-				// make dictionary into a list of each list of rewards 
-
-					return point_values;
 				}
-				return null;
+
+			    // make dictionary into a list of each list of rewards 
+				return point_values;
 			}
+			return null;
+		}
 
 		public Dictionary<int, List<Reward>> GetRewards()
 		{

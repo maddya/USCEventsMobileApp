@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MorePage" Title="More">
 	<ContentPage.Content>
 		<TableView Intent="Settings" RowHeight="68">
 		    <TableRoot>
 		        <TableSection Title="Connect">
-					<ViewCell >
+					<ViewCell Tapped="Contact_Clicked">
                         <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
                             <Image Source="contact.png" HorizontalOptions="Start"/>
                             <Label Text="Contact" FontSize="Large" HorizontalOptions="StartAndExpand" />
 							<Image Source="forward.png" HorizontalOptions="EndAndExpand" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
                         </StackLayout>
                     </ViewCell>
-					<ViewCell>
+					<ViewCell Tapped="ConsciousCrew_Clicked">
                         <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
                             <Image Source="conscious.png" HorizontalOptions="Start" />
                             <Label Text="Apply to Conscious Crew" FontSize="Large" HorizontalOptions="StartAndExpand"/>

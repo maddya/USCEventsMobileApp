@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using USCEvents.Models;
 using USCEvents.Services;
 using USCEvents.View;
@@ -17,10 +18,15 @@ namespace USCEvents
 		public MyRewardsPage()
 		{
 			FirebaseService f = new FirebaseService();
-			InitializeComponent();
-			rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
-			MyRewardsView.IsGroupingEnabled = true;
-			MyRewardsView.ItemsSource = rewards.Values;
+            try
+            {
+                InitializeComponent();
+                rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
+                MyRewardsView.IsGroupingEnabled = true;
+                MyRewardsView.ItemsSource = rewards.Values;
+            } catch (Exception ex) {
+                Debug.WriteLine(ex);
+            }
 		}
 
 		//Select reward --> details page of that reward

@@ -81,6 +81,12 @@
     <EmbeddedResource Include="View\TermsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ContactPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConsciousCrewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +158,12 @@
     <Compile Include="Services\FirebaseService.cs" />
     <Compile Include="Models\UserEventUpgrade.cs" />
     <Compile Include="Models\UserRewardItem.cs" />
+    <Compile Include="View\ContactPage.xaml.cs">
+      <DependentUpon>ContactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsciousCrewPage.xaml.cs">
+      <DependentUpon>ConsciousCrewPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks">
