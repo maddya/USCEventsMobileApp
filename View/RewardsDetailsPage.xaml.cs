@@ -11,6 +11,7 @@ namespace USCEvents
 {
 	public partial class RewardsDetailsPage : ContentPage
 	{
+        
 		public RewardsDetailsPage(Reward r)
 		{
 			InitializeComponent();
