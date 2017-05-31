@@ -37,14 +37,19 @@ namespace USCEvents.View
             if (currentEvent != null) {
 				EstimoteManager.Instance.Ranged += async (sender, beacons) => //if a beacon is ranged
                 {
+                    bool CheckedIn = false;
                     foreach (var beacon in beacons)
                     {
-                        //DisplayAlert("You're in that range", null, "cool"); 
-                        App.me.Points += currentEvent.Points;
-                        FirebaseService f = new FirebaseService();
-                        await f.UpdateUser();
-                        await Navigation.PushAsync(new CheckInPage()); //send them to confirmed 
-                        EstimoteManager.Instance.StopRanging(new BeaconRegion("estimote", "B9407F30-F5F8-466E-AFF9-25556B57FE6D"));
+                        if (!CheckedIn)
+                        {
+                            CheckedIn = true;
+                            EstimoteManager.Instance.StopRanging(new BeaconRegion("estimote", "B9407F30-F5F8-466E-AFF9-25556B57FE6D"));
+                            //DisplayAlert("You're in that range", null, "cool"); 
+                            App.me.Points += currentEvent.Points;
+                            FirebaseService f = new FirebaseService();
+                            await f.UpdateUser();
+                            await Navigation.PushAsync(new CheckInPage(currentEvent)); //send them to confirmed 
+                        }
                     }
                 };
             } else {

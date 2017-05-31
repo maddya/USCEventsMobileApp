@@ -4,9 +4,9 @@
         <StackLayout>
             <StackLayout Padding="24">
                 <Image Source="CheckinDetail.png" HeightRequest="120"></Image>
-                <Label HorizontalTextAlignment="Center" Font="24,Bold" Text="You got 50 points!" Margin="0,18,0,18"/>
-                <Label HorizontalTextAlignment="Center" Text="You successfully checked into this event for __ points! The points have been added to your accout."/>
-                <Label HorizontalTextAlignment="Center" Text="You now have ___ points"/>
+                <Label x:Name="MessageTitle" HorizontalTextAlignment="Center" Font="24,Bold" Margin="0,18,0,18"/>
+                <Label x:Name="MessageDetails" HorizontalTextAlignment="Center" />
+                <Label x:Name="MessageCurrentPoints" HorizontalTextAlignment="Center"/>
             </StackLayout>
             <RelativeLayout VerticalOptions="End" >
                 <BoxView x:Name="Dismiss" Color="#c900c6" HeightRequest="65" 

@@ -15,7 +15,6 @@ namespace USCEvents
 		public EventsPage()
 		{
 			InitializeComponent();
-            //Title = "EVENTS";
             NavigationPage.SetTitleIcon(this, "USCBlack.png");
 			events = eventsService.GetEvents();
 			EventsView.ItemsSource = events;
