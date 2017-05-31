@@ -17,7 +17,6 @@ namespace USCEvents
 			InitializeComponent();
 			events = eventsService.GetEvents();
 			EventsView.ItemsSource = events;
-
 			EventsView.ItemTapped += async (sender, e) =>
 			{
 				await Navigation.PushAsync(new EventDetailsPage(e.Item as Event));
