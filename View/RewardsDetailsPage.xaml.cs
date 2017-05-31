@@ -15,7 +15,7 @@ namespace USCEvents
 		public RewardsDetailsPage(Reward r)
 		{
 			InitializeComponent();
-			confirm.Text = "Redeem for " + r.Points + " Points";
+			confirm.Text = "Purchase for " + r.Points + " Points";
 			//title.Text = r.Title.ToUpper();
 			image.Source = r.RewardsImage;
 			//image.Aspect = Aspect.AspectFit;
