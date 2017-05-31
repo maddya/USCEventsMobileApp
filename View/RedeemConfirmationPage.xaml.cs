@@ -12,7 +12,7 @@ namespace USCEvents
 			InitializeComponent();
 			image.Source = r.RewardsImage;
 			rew_description.Text = "Congrats on redeeming " + r.Points + " points for " + r.Title + "!";
-			curPoints.Text = "You now have " + r.Points + " Points!"; //needs to be changed to USERS points not REWARDS pointszepli
+            curPoints.Text = "You now have " + App.me.Points + " Points!"; //needs to be changed to USERS points not REWARDS pointszepli
 
 			ViewMyRew.GestureRecognizers.Add (new TapGestureRecognizer {
 				Command = new Command(() => OnMyRewardsClicked()),

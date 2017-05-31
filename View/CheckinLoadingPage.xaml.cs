@@ -43,7 +43,7 @@ namespace USCEvents.View
                         App.me.Points += currentEvent.Points;
                         FirebaseService f = new FirebaseService();
                         await f.UpdateUser();
-                        await Navigation.PushAsync(new CheckInPage(currentEvent)); //send them to confirmed 
+                        await Navigation.PushAsync(new CheckInPage()); //send them to confirmed 
                         EstimoteManager.Instance.StopRanging(new BeaconRegion("estimote", "B9407F30-F5F8-466E-AFF9-25556B57FE6D"));
                     }
                 };

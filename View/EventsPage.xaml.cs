@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using USCEvents.Models;
@@ -15,6 +15,8 @@ namespace USCEvents
 		public EventsPage()
 		{
 			InitializeComponent();
+            //Title = "EVENTS";
+            NavigationPage.SetTitleIcon(this, "USCBlack.png");
 			events = eventsService.GetEvents();
 			EventsView.ItemsSource = events;
 			EventsView.ItemTapped += async (sender, e) =>
