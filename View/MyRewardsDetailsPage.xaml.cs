@@ -14,7 +14,8 @@ namespace USCEvents
 		{
 			InitializeComponent();
             if(r.isRedeemed){
-                redeem.Text = "REWARD HAS BEEN REDEEMED";
+				confirm_box.HeightRequest = 100;
+				redeem.Text = "REWARD HAS ALREADY BEEN REDEEMED";
             }
             else{
                 redeem.Text = "REDEEM FOR " + r.Points + " POINTS";
