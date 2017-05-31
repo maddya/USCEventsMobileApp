@@ -18,7 +18,7 @@ namespace USCEvents
 				redeem.Text = "REWARD HAS ALREADY BEEN REDEEMED";
             }
             else{
-                redeem.Text = "REDEEM FOR " + r.Points + " POINTS";
+				redeem.Text = "REDEEM " + r.Title.ToUpper();
 				confirm_box.GestureRecognizers.Add(new TapGestureRecognizer
 				{
 					Command = new Command(() => OnRedeem(r)),
@@ -32,7 +32,6 @@ namespace USCEvents
 			//title.Text = r.Title.ToUpper();
 			image.Source = r.RewardsImage;
 			//image.Aspect = Aspect.AspectFit;
-			//description.Text = "That other text? Sadly, it’s no longer a 10. You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected. I have a 10 year old son. He has words. He is so good with these words it's unbelievable.";
 			description.Text = r.Description;
 			//label.GestureRecognizers.Add(new TapGestureRecognizer((view) => OnLabelClicked()));
 
