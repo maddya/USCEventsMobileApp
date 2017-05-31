@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using USCEvents.Models;
 using Xamarin.Forms;
 
-namespace USCEvents
+namespace USCEvents.View
 {
 	public partial class CheckInPage : ContentPage
 	{
