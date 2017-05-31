@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MorePage" Title="More">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MorePage" Title="MORE">
 	<ContentPage.Content>
 		<TableView Intent="Settings" RowHeight="68">
 		    <TableRoot>
-		        <TableSection Title="Connect">
+		        <TableSection Title="CONNECT">
 					<ViewCell >
                         <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
                             <Image Source="contact.png" HorizontalOptions="Start"/>
@@ -19,7 +19,7 @@
                         </StackLayout>
                     </ViewCell>
 		        </TableSection>
-				<TableSection Title="Settings">
+				<TableSection Title="SETTINGS">
 					<ViewCell Tapped="Account_Clicked">
                         <StackLayout Orientation="Horizontal" Padding="18" Spacing="13">
                             <Image Source="account.png" HorizontalOptions="Start"/>

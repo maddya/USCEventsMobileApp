@@ -58,7 +58,9 @@ namespace USCEvents
 		private void OnMyRewardSelected(object sender, SelectedItemChangedEventArgs e)
 		{
 			var item = e.SelectedItem;
-			Navigation.PushAsync(new MyRewardsDetailsPage((Reward)item));
+            var r = (Reward)item;
+            Navigation.PushAsync(new MyRewardsDetailsPage(r));
+			
 		}
 
 		//my rewards selected --> my rewards page

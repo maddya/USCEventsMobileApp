@@ -13,7 +13,21 @@ namespace USCEvents
 		public MyRewardsDetailsPage(Reward r)
 		{
 			InitializeComponent();
-			redeem.Text = "Redeem for " + r.Points + " Points";
+            if(r.isRedeemed){
+                redeem.Text = "REWARD HAS BEEN REDEEMED";
+            }
+            else{
+                redeem.Text = "REDEEM FOR " + r.Points + " POINTS";
+				confirm_box.GestureRecognizers.Add(new TapGestureRecognizer
+				{
+					Command = new Command(() => OnRedeem(r)),
+				});
+				redeem.GestureRecognizers.Add(new TapGestureRecognizer
+				{
+					Command = new Command(() => OnRedeem(r)),
+				});
+            }
+			
 			//title.Text = r.Title.ToUpper();
 			image.Source = r.RewardsImage;
 			//image.Aspect = Aspect.AspectFit;
@@ -22,21 +36,14 @@ namespace USCEvents
 			//label.GestureRecognizers.Add(new TapGestureRecognizer((view) => OnLabelClicked()));
 
 			//make the "confirm" button clickable
-			confirm_box.GestureRecognizers.Add(new TapGestureRecognizer
-			{
-				Command = new Command(() => OnRedeem(r)),
-			});
-			redeem.GestureRecognizers.Add(new TapGestureRecognizer
-			{
-				Command = new Command(() => OnRedeem(r)),
-			});
+			
 		}
 
         //called if the user accepts the button to view voucher (should be done at merch desk)
 		async void OnRedeem(Reward r)
 		{
             var f = new FirebaseService();
-            var confirm = await DisplayAlert("Redeeem Voucher", "Once redeemed, voucher will no longer be available, please hand to Merch booth to redeem.", "REDEEM", "Cancel");
+            var confirm = await DisplayAlert("Redeeem Voucher", "Once redeemed, voucher will no longer be available, please hand to Merch booth to redeem.", "REDEEM", "CANCEL");
             //if user selects confirm, call onredeem
             if (confirm) {
                 //remove locally

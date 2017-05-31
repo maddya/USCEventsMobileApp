@@ -14,6 +14,7 @@
 		        	<ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="20">
 							<!--<Image x:Name="profileImage" WidthRequest="100" HeightRequest="100"/>-->
+                                <Label Text="Name" FontSize="Large"/>
 							<Label x:Name="name" FontSize="Large" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
