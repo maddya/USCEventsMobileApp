@@ -42,19 +42,35 @@ namespace USCEvents
             hundred_points_view.ItemsSource = hundred_pts;
             one_fifty_points_view.ItemsSource = one_fifty_pts;
 
+            fifty_points_view.ItemTapped += async (sender, e) =>
+	        {
+	            await Navigation.PushAsync(new RewardsDetailsPage(e.Item as Reward));
+			    ((ListView)sender).SelectedItem = null;
+	        };
 
+            hundred_points_view.ItemTapped += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new RewardsDetailsPage(e.Item as Reward));
+				((ListView)sender).SelectedItem = null;
+			};
 
+            one_fifty_points_view.ItemTapped += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new RewardsDetailsPage(e.Item as Reward));
+				((ListView)sender).SelectedItem = null;
+			};
 			//RewardsView.IsGroupingEnabled = true;
 			//RewardsView.ItemsSource = rewards.Values;
 
 		}
 
-		//Select reward --> details page of that reward
-		private void OnRewardSelected(object sender, SelectedItemChangedEventArgs e)
-		{
-			var item = e.SelectedItem;
-			Navigation.PushAsync(new RewardsDetailsPage((Reward)item));
-		}
+		////Select reward --> details page of that reward
+		//private async void OnRewardSelected(object sender, SelectedItemChangedEventArgs e)
+		//{
+		//	var item = e.SelectedItem;
+  //          Reward temp = new Reward((Reward)item);
+		//	await Navigation.PushAsync(new RewardsDetailsPage((Reward)item));
+		//}
 
 		//my rewards selected --> my rewards page
 		private void OnMyRewardsClicked(object sender, EventArgs e)

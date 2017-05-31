@@ -24,7 +24,7 @@
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
                 </RelativeLayout>
-    			<ListView x:Name="fifty_points_view" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected">
+    			<ListView x:Name="fifty_points_view" RowHeight="96" SeparatorVisibility="None">
                     <ListView.ItemTemplate>
     			       <DataTemplate>
     			       		<ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
@@ -39,7 +39,7 @@
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
                 </RelativeLayout>
-                <ListView x:Name="hundred_points_view" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected">
+                <ListView x:Name="hundred_points_view" RowHeight="96" SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                        <DataTemplate>
                             <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
@@ -54,7 +54,7 @@
                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
                 </RelativeLayout>
-                <ListView x:Name="one_fifty_points_view" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected">
+                <ListView x:Name="one_fifty_points_view" RowHeight="96" SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                        <DataTemplate>
                             <!--<ImageCell ImageSource ="Checkin.png"></ImageCell>-->
