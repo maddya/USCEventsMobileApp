@@ -10,6 +10,7 @@ namespace USCEvents
 		public MorePage()
 		{
 			InitializeComponent();
+            NavigationPage.SetTitleIcon(this, "USCBlack.png");
 		}
 
 		public async void Notifications_Clicked(object sender, EventArgs e)
