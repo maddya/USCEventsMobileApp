@@ -12,7 +12,7 @@ namespace USCEvents.View
 			InitializeComponent();
 
             MessageTitle.Text = "You got " + e.Points + " points!";
-            MessageDetails.Text = "You successfully checked into this event for " + e.Points + " points! The points have been added to your accout.";
+            MessageDetails.Text = "You successfully checked into " + e.Title + " for " + e.Points + " points! The points have been added to your account.";
             MessageCurrentPoints.Text = "You now have " + App.me.Points + " points";
                 
 			Dismiss.GestureRecognizers.Add(new TapGestureRecognizer
@@ -28,6 +28,7 @@ namespace USCEvents.View
 		private void OnDismiss()
 		{
 			Navigation.PopAsync();
+            Navigation.PopAsync();
 		}
 
 

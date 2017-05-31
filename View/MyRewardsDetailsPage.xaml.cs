@@ -55,8 +55,8 @@ namespace USCEvents
 
 				await f.UpdateRewards();
 
-				//await Navigation.PopAsync();
-
+                //await Navigation.PopAsync();
+                await Navigation.PopAsync();
                 await Navigation.PushAsync(new MyRewardsPage());
             }
 
