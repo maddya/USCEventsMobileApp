@@ -56,7 +56,7 @@ namespace USCEvents
 			var facebookProfile = JsonConvert.DeserializeObject<UserInfo>(userJson);
 
 			App.me = facebookProfile;
-
+            var m = App.me;
             HandleUser();
 
 			return facebookProfile;
@@ -68,14 +68,12 @@ namespace USCEvents
             var dbQuery = await f.ReadExistingUserData(App.me.Id);
             if (dbQuery == null)
             {
-                User user = new User()
-                {
-                    Name = App.me.Name,
-                    FacebookID = App.me.Id,
-                    Points = 0
-                };
-                f.AddNewUser(user);
+                App.me.Points = 0;
+                await f.AddNewUser(App.me);
+            } else {
+                App.me = dbQuery.Object;
             }
+            await f.ReadRewardData(App.me.Id);
         }	
     }
 }

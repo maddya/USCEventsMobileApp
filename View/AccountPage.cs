@@ -14,9 +14,12 @@ namespace USCEvents
 		public AccountPage()
 		{
 			InitializeComponent();
+            var m = App.me;
 			name.Text = App.me.Name;
-			profileImage.Source = App.me.Picture.Data.Url;
-			id.Text = App.me.Id;
+			//profileImage.Source = App.me.Picture.Data.Url;
+			//id.Text = App.me.Id;
+            points.Text = App.me.Points + " points";
+            //profilePic.Source = App.me.Picture.Data.Url;
 		}
 	}
 }

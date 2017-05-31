@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Firebase.Xamarin.Auth;
@@ -20,49 +21,75 @@ namespace USCEvents.Services
             firebase = new FirebaseClient("https://usceventsapp.firebaseio.com/");
         }
 
-		
-        public async void PostUserEventUpgrade(UserEventUpgrade eventUpgrade) {
-			var item = await firebase
-                .Child("Events/" + eventUpgrade.EventName + " " + eventUpgrade.EventYear)
-                .PostAsync(eventUpgrade, false);
-        }
-
-        public async void PostUserEventReward(UserRewardItem rewardItem) {
-			var item = await firebase
-				.Child("Reward Items")
-                .PostAsync(rewardItem, false);
-        }
-
-
-		public async void AddNewUser(Models.User user)
+        public async Task<string> AddNewUser(UserInfo user)
 		{
 			var item = await firebase
-                .Child("Users/"+user.FacebookID)
+                .Child("Users/"+user.Id)
 				.PostAsync(user, false);
+            return item.Key;
 		}
 
-        public async Task<Models.User> ReadExistingUserData(string ID) {
-			var items = await firebase
-			  .Child("Users/"+ID)
-			  .OnceAsync<Models.User>();
+        public async Task<string> UpdateUser()
+        {
+            await firebase
+                .Child("Users/" + App.me.Id)
+                .DeleteAsync();
+            var item = await firebase
+                .Child("Users/" + App.me.Id)
+                .PostAsync(App.me, false);
+            return item.Key;
+        }
+
+        public async Task<FirebaseObject<UserInfo>> ReadExistingUserData(string ID) {
+            var items = await firebase
+                .Child("Users/"+ID)
+                .OnceAsync<UserInfo>();
             foreach (var user in items) {
-                return user.Object;
+                return user;
             }
             return null;
         }
 
-        // this is the method I'm currently using in MyRewardsPage.xaml.cs
-        // the refactored methods are above and what we're eventually gonna use, I just haven't implemented yet
-        public async void PostData()
+        //add a reward to the ID for a particular user (local user) on firebase
+        public async Task<String> AddReward(UserInfo user, Reward reward) {
+            var item = await firebase
+                .Child("Rewards/" + user.Id)
+                .PostAsync(reward);
+            App.me.Points = App.me.Points - reward.Points; //set new points
+            return item.Key;
+            //need to push new points to firebase...
+        }
+
+        //Will read the users rewards from firebase
+		public async Task<FirebaseObject<Reward>> ReadRewardData(string ID)
 		{
-			// add new item to list of data 
-			var item = await firebase
-				.Child("Life in Color 2017")
-				//.WithAuth("<Authentication Token>") // <-- Add Auth token if required. Auth instructions further down in readme.
-				.PostAsync(new UserEventUpgrade
-				{
-					LegalUserName = "Madeleine Austin",
-				}, false);
+            //App.me.myRewards = new List<Reward>();
+			var items = await firebase
+				.Child("Rewards/"+ID)
+				.OnceAsync<Reward>();
+            App.me.myRewards = new List<Reward>();
+			foreach (var user in items)
+			{
+                
+                var rew = user.Object;
+				App.me.myRewards.Add(rew);
+                //return user;
+			}
+			return null;
+		}
+
+		public async Task<FirebaseObject<Reward>> UpdateRewards()
+		{
+            //clear current rewards
+			await firebase
+				.Child("Rewards/" + App.me.Id)
+				.DeleteAsync();
+            foreach (Reward r in App.me.myRewards){
+				var item = await firebase
+				.Child("Rewards/" + App.me.Id)
+				.PostAsync(r, false);
+            }
+            return null;
 		}
 	}
 }

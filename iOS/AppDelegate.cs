@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using CoreLocation;
 using Foundation;
 using UIKit;
 
@@ -16,5 +18,6 @@ namespace USCEvents.iOS
 			LoadApplication(new App());
 			return base.FinishedLaunching(app, options);
 		}
+
 	}
 }
