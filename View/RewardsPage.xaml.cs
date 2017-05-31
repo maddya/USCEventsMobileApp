@@ -30,6 +30,7 @@ namespace USCEvents
 
 		public RewardsPage()
 		{
+			Title = "MY POINTS: " + App.me.Points;
 			InitializeComponent();
 			rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
             fifty_pts = rewards[50];
