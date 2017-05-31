@@ -84,6 +84,12 @@
     <EmbeddedResource Include="View\MyRewardsDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ContactPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConsciousCrewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,6 +164,12 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="View\MyRewardsDetailsPage.xaml.cs">
       <DependentUpon>MyRewardsDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ContactPage.xaml.cs">
+      <DependentUpon>ContactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsciousCrewPage.xaml.cs">
+      <DependentUpon>ConsciousCrewPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
