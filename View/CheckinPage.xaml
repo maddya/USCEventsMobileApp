@@ -11,7 +11,7 @@
             <RelativeLayout VerticalOptions="End" >
                 <BoxView x:Name="Dismiss" Color="#c900c6" HeightRequest="65" 
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
-                <Label x:Name="Dismiss_Label" Text="Dismiss" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+                <Label x:Name="Dismiss_Label" Text="DISMISS" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>

@@ -1,41 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MyRewardsPage" Title="My Rewards">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.MyRewardsPage" Title="MY REWARDS">
 	<ContentPage.Content>
-        <ScrollView>
         <StackLayout>
+        <ScrollView>
+           <StackLayout>
             <RelativeLayout VerticalOptions="End" >
                 <BoxView Color="#c900c6" HeightRequest="60" 
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
-                <Label  Text="Available to Redeem" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+                <Label  Text="AVAILABLE TO REDEEM" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
             </RelativeLayout>
              <ListView  x:Name="MyAvailable" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnMyRewardSelected">
-              <ListView.ItemTemplate>
-                <DataTemplate>
-                        <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="Click to Redeem"/>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                            <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="Click to Redeem"/>
                     </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <RelativeLayout VerticalOptions="End" >
                 <BoxView Color="#c900c6" HeightRequest="60" 
                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
-                <Label  Text="Redeemed" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+                <Label  Text="REDEEMED" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
                         RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
                         RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
             </RelativeLayout>
 
-             <ListView x:Name="MyRedeemed" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnMyRewardSelected">-->
-             <ListView.ItemTemplate>
-                <DataTemplate>
+             <ListView x:Name="MyRedeemed" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnMyRewardSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
                         <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="Already Redeemd"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             </StackLayout>
         </ScrollView>
+            </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

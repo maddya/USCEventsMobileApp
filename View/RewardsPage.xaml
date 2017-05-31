@@ -1,31 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RewardsPage" Title="Rewards ">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.RewardsPage" Title="REWARDS">
 	<ContentPage.Content>
-		<!--<Image Source="Checkin.png"></Image>-->
-        <StackLayout>
-
-            <StackLayout Orientation="Horizontal" HeightRequest="45" Margin="0,12,0,12" Padding="0,0,0,0">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" HeightRequest="45" Margin="0,12,0,12" Padding="0,0,0,0">
                     <Button HorizontalOptions="StartAndExpand" Clicked="OnCheckinClicked" x:Name="CheckinButton" Image="Checkin.png" Text="Check In" FontSize="16" TextColor="Black"/>
                         
                     <Button HorizontalOptions="CenterAndExpand" Clicked="OnMyRewardsClicked" Image="MyRewards.png" Text="My Rewards" FontSize="16" TextColor="Black"/>
-            </StackLayout>
+        </StackLayout>
+        <ScrollView>
 
-			<ListView x:Name="RewardsView" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected">
+        <StackLayout>
 
-				<ListView.GroupHeaderTemplate>
-					<DataTemplate>
-						<ViewCell>
-							<Label Text="Point Value"/>
-						</ViewCell>
-					</DataTemplate>
-				</ListView.GroupHeaderTemplate>
-				<ListView.ItemTemplate>
+            
+            <RelativeLayout VerticalOptions="End" >
+                <BoxView Color="#c900c6" HeightRequest="60" 
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                <Label  Text="50 POINTS" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+            </RelativeLayout>
+			<ListView x:Name="fifty_points_view" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected">
+                <ListView.ItemTemplate>
 			       <DataTemplate>
-						<!--<ImageCell ImageSource ="Checkin.png"></ImageCell>-->
 			       		<ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
 			       </DataTemplate>
-			     </ListView.ItemTemplate>
+                </ListView.ItemTemplate>
 			</ListView>
+            <RelativeLayout VerticalOptions="End" >
+                <BoxView Color="#c900c6" HeightRequest="60" 
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                <Label  Text="100 POINTS" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+            </RelativeLayout>
+            <ListView x:Name="hundred_points_view" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected">
+                <ListView.ItemTemplate>
+                   <DataTemplate>
+                        <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
+                   </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <RelativeLayout VerticalOptions="End" >
+                <BoxView Color="#c900c6" HeightRequest="60" 
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                <Label  Text="150 POINTS" FontAttributes="Bold" FontSize="24" TextColor="White" Margin="20" HorizontalTextAlignment="Center"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0}" 
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" 
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"/>
+            </RelativeLayout>
+            <ListView x:Name="one_fifty_points_view" RowHeight="96" SeparatorVisibility="None" ItemSelected="OnRewardSelected">
+                <ListView.ItemTemplate>
+                   <DataTemplate>
+                        <!--<ImageCell ImageSource ="Checkin.png"></ImageCell>-->
+                        <ImageCell ImageSource="{Binding RewardsImage}" Text="{Binding Title}" Detail="{Binding Points}"/>
+                   </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             </StackLayout>
+        </ScrollView>
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

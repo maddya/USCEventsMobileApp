@@ -2,10 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="USCEvents.AccountPage">
 	<ContentPage.Content>
         <StackLayout>
-        <Image x:Name="profilePic" VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="100" Margin="0,0,0,0"/>
 		<TableView Intent="Settings" RowHeight="68">
 		    <TableRoot>
-		        <TableSection Title="Profile">
+		        <TableSection Title="BASIC INFO">
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="20">
                             <Label Text="Login Method" FontSize="Large" />
@@ -42,7 +41,7 @@
                         </StackLayout>
                     </ViewCell>-->
 		        </TableSection>
-				<TableSection Title="Points">
+				<TableSection Title="ACCOUNT POINTS">
 					<ViewCell>
 						<StackLayout Orientation="Horizontal" Padding="20">
 							<Label x:Name="points" FontSize="Large"/>

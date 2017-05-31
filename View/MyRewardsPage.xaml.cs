@@ -12,19 +12,19 @@ namespace USCEvents
         private RewardsService rewardsService = new RewardsService();
         private List<Reward> myRewards = App.me.myRewards;
 
-        private List<Reward> available { get; set;}
-        private List<Reward> redeemed { get; set; }
+        private List<Reward> Available { get; set;}
+        private List<Reward> Redeemed { get; set; }
 
 		public MyRewardsPage()
 		{
             InitializeComponent();
 			FirebaseService f = new FirebaseService();
 
-            redeemed = getRedeemed();
-            available = getAvailable();
+            Redeemed = getRedeemed();
+            Available = getAvailable();
 
-            MyAvailable.ItemsSource = available;
-            MyRedeemed.ItemsSource = redeemed;
+            MyAvailable.ItemsSource = Available;
+            MyRedeemed.ItemsSource = Redeemed;
 
 		}
 

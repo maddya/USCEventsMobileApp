@@ -20,17 +20,31 @@ namespace USCEvents
 		//}
 
 		private Dictionary<int, List<Reward>> rewards { get; set; }
+
 		//private ObservableCollection<Grouping<Reward>> RewardsGrouped { get; set; }
 		private RewardsService rewardsService = new RewardsService();
+        private List<Reward> fifty_pts;
+        private List<Reward> hundred_pts;
+        private List<Reward> one_fifty_pts;
 
 
 		public RewardsPage()
 		{
 			InitializeComponent();
 			rewards = rewardsService.GetRewards(); //dictionary of point values : rewards 
-			
-			RewardsView.IsGroupingEnabled = true;
-			RewardsView.ItemsSource = rewards.Values;
+            fifty_pts = rewards[50];
+            hundred_pts = rewards[100];
+            one_fifty_pts = rewards[150];
+
+
+            fifty_points_view.ItemsSource = fifty_pts;
+            hundred_points_view.ItemsSource = hundred_pts;
+            one_fifty_points_view.ItemsSource = one_fifty_pts;
+
+
+
+			//RewardsView.IsGroupingEnabled = true;
+			//RewardsView.ItemsSource = rewards.Values;
 
 		}
 
